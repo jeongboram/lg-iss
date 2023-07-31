@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+* {
+    font-display: swap;
+}
+*:not(input) {
+    font-family: "Pretendard";
+}
+
+/* base rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    width: 100%;
+    touch-action: manipulation;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+:not(input) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent !important;
+}
+textarea {
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+:focus {
+    outline: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+th,
+td {
+    padding: 0;
+}
+fieldset,
+img {
+    border: 0;
+}

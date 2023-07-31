@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+$accent_color: #ef3484;
+$primary_bg_color: #282828;
+
+@mixin btnTextHide($width, $height) {
+    display: block;
+    text-indent: -99999px;
+    width: $width;
+    height: $height;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin psuedoBg() {
+    display: block;
+    content: "";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+@mixin iconBg() {
+    text-indent: -999999px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+}
+
+@mixin transition($el, $time) {
+    transition: $el $time ease-in-out;
+    -webkit-transition: $el $time ease-in-out;
+}
+
+@mixin lingClamp($line) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+}
+
+@mixin maxWidth($width) {
+    max-width: $width;
+    margin: 0 auto;
+}
