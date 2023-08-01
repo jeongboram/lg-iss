@@ -35,7 +35,7 @@
     font-style: normal;
     font-weight: normal;
     src: local("LG Smart Light Light"),
-        url("LG Smart Light.woff") format("woff");
+        url("fonts/LG Smart Light.woff") format("woff");
 }
 
 @font-face {
@@ -43,5 +43,5 @@
     font-style: normal;
     font-weight: normal;
     src: local("LG Smart Light SemiBold"),
-        url("LG Smart SemiBold.woff") format("woff");
+        url("fonts/LG Smart SemiBold.woff") format("woff");
 }

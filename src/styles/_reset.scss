@@ -4,7 +4,7 @@
     font-display: swap;
 }
 *:not(input) {
-    font-family: "Pretendard";
+    font-family: "LG Smart";
 }
 
 /* base rules */
@@ -77,4 +77,16 @@ td {
 fieldset,
 img {
     border: 0;
+}
+button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.inner {
+    width: 1920px;
+    margin: 0 auto;
 }

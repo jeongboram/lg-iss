@@ -1,2 +1,213 @@
 body {
+    background-color: $base_dark_color;
+    color: $default-text-color;
+}
+html,
+body,
+#root {
+    height: 100%;
+}
+
+// .animated-gradient {
+//     background: linear-gradient(
+//         to right,
+//         #ddd 0%,
+//         #ddd 20%,
+//         #333 50%,
+//         #ddd 80%,
+//         #ddd 100%
+//     );
+//     width: 100%;
+//     height: 2px;
+//     background-size: 200% auto;
+//     background-position: 0 100%;
+//     animation: gradient 2s infinite;
+//     animation-fill-mode: forwards;
+//     animation-timing-function: linear;
+// }
+// .animate-title {
+//     color: #fff;
+//     font-size: 24px;
+//     text-shadow: 5px 5px 0px #f6c065, -5px -5px 0px #f6c065,
+//         5px -5px 0px #f6c065, -5px 5px 0px #f6c065;
+// }
+
+// @keyframes gradient {
+//     0% {
+//         background-position: 0 0;
+//     }
+//     100% {
+//         background-position: -200% 0;
+//     }
+// }
+
+.header-container {
+    width: 100%;
+    height: 80px;
+    background-color: $primary_dark_color;
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+    }
+    header {
+        h1 {
+            @include textHide();
+        }
+        nav {
+            ul {
+                display: flex;
+                gap: 48px;
+                li {
+                    a {
+                        display: flex;
+                        position: relative;
+                        height: 80px;
+                        align-items: center;
+                        font-size: 18px;
+                        color: $default-text-color;
+                        text-transform: uppercase;
+                        @include transition(all, 0.2s);
+                        &:before {
+                            opacity: 0;
+                            display: block;
+                            content: "";
+                            width: 100%;
+                            height: 2px;
+                            background-color: $default-text-color;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            @include transition(opacity, 0.3s);
+                        }
+                    }
+                    &.on,
+                    &:hover {
+                        a {
+                            color: $hover-text-color;
+                            &:before {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .gnb-cdp {
+                        background-repeat: no-repeat;
+                        background-position: left center;
+                        background-size: 24px 24px;
+                        padding-left: 30px;
+                        background-image: url("../../public/res/images/icons/gnb_icon_cdp.png");
+                    }
+                }
+            }
+        }
+    }
+    .user-control {
+        display: flex;
+        align-items: center;
+        .running-time,
+        .dropmenu-user-setting {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .running-time {
+            padding: 0 24px;
+            span {
+                display: block;
+                position: relative;
+                font-size: 14px;
+                color: #fff;
+                padding: 0 0 0 38px;
+                &:before {
+                    @include psuedoBg();
+                    width: 30px;
+                    height: 30px;
+                    position: absolute;
+                    top: -7.5px;
+                    left: 0;
+                    background-image: url("../../public/res/images/icons/user-running-time.png");
+                }
+            }
+        }
+        .dropmenu-user-setting {
+            position: relative;
+            button {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                font-size: 14px;
+                color: #fff;
+                padding: 0 0 0 24px;
+                span {
+                    display: inline-block;
+                    position: relative;
+                    padding: 0 26px 0 38px;
+                    &:before {
+                        @include psuedoBg();
+                        width: 30px;
+                        height: 30px;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                        background-image: url("../../public/res/images/icons/user-setting-user.png");
+                    }
+                    &:after {
+                        @include psuedoBg();
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        background-image: url("../../public/res/images/icons/user-setting-dropdown-arrow.png");
+                    }
+                }
+            }
+            .ui-dropmenu {
+                opacity: 0;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #333;
+                padding: 10px;
+                box-shadow: 1px 3px 2px 3px rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+}
+
+.main-container {
+    height: calc(100% - 80px);
+    max-height: 1000px;
+    outline: 1px solid rgba(0, 240, 120, 0.8);
+    .inner {
+        height: 100%;
+        display: flex;
+        gap: 24px;
+        padding: 36px 24px 24px 24px;
+    }
+    .sidebar-section {
+        width: 292px;
+        height: 100%;
+        display: flex;
+        outline: 1px solid #fff;
+    }
+    .contents-section {
+        width: calc(100% - 268px);
+        outline: 1px solid #fff;
+    }
+}
+
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    .box-total-issue,
+    .box-search {
+        @extend .box-container-style;
+        background-color: $card_bg_type02_color;
+    }
 }

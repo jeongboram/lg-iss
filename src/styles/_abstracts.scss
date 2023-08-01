@@ -1,8 +1,21 @@
 @charset "utf-8";
 
-$accent_color: #ef3484;
-$primary_bg_color: #282828;
+$primary_accent_color: #c5bbff;
+$primary_dark_color: #302d3e;
+$base_dark_color: #010101;
+$card_bg_type01_color: #1c1c1c;
+$card_bg_type02_color: #282828;
+$default-text-color: #b8b8b8;
+$disabled-text-color: #6d6d6d;
+$hover-text-color: #ffffff;
 
+@mixin textHide() {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    text-indent: -99999px;
+}
 @mixin btnTextHide($width, $height) {
     display: block;
     text-indent: -99999px;
@@ -45,4 +58,9 @@ $primary_bg_color: #282828;
 @mixin maxWidth($width) {
     max-width: $width;
     margin: 0 auto;
+}
+
+.box-container-style {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
