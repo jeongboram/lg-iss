@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBar from '../components/layout/SideBar';
+import DefaultButton from '../components/common/DefaultButton';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 
@@ -33,6 +34,7 @@ export const data = {
  },
 	],
   };
+
 
 const Dashboard = () => {
 	return (
@@ -70,7 +72,7 @@ const Dashboard = () => {
 													<option>all Region</option>
 												</select>
 											</div>
-											<button className="btn-search">Search</button>
+											<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 										</div>
 									</div>
 									<div className="ui-chart-container">
