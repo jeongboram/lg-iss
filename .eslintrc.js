@@ -24,6 +24,7 @@ module.exports = {
         // ESLint 규칙을 지정합니다. extends에서 지정된 규칙을 덮어 쓸수도 있습니다.
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
+        'react/prop-types': 'off',
     },
     settings: {
         react: {
