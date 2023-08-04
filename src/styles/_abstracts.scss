@@ -5,62 +5,76 @@ $primary_dark_color: #302d3e;
 $base_dark_color: #010101;
 $card_bg_type01_color: #1c1c1c;
 $card_bg_type02_color: #282828;
+$card_border_color: rgba(255, 255, 255, 0.2);
 $default-text-color: #b8b8b8;
 $disabled-text-color: #6d6d6d;
 $hover-text-color: #ffffff;
 
+$accent-new-color: #e992e3;
+$accent-unadress-color: #f6c065;
+$accent-process-color: #85dddb;
+
+$table-head-text-color: #b8b8b8;
+$table-head-bg-color: #1c1c1c;
+$table-head-border-color: rgba(255, 255, 255, 0.2);
+$table-body-text-color: #fff;
+$table-body-bg-color: transparent;
+$table-body-border-color: rgba(255, 255, 255, 0.05);
+$table-body-hover-bg-color: rgba(255, 255, 255, 0.05);
+
 @mixin textHide() {
-    display: block;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    text-indent: -99999px;
+	display: block;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	text-indent: -99999px;
 }
 @mixin btnTextHide($width, $height) {
-    display: block;
-    text-indent: -99999px;
-    width: $width;
-    height: $height;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
+	display: block;
+	text-indent: -99999px;
+	width: $width;
+	height: $height;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 @mixin psuedoBg() {
-    display: block;
-    content: "";
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
+	display: block;
+	content: '';
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 @mixin iconBg() {
-    text-indent: -999999px;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    overflow: hidden;
+	text-indent: -999999px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	overflow: hidden;
 }
 
 @mixin transition($el, $time) {
-    transition: $el $time ease-in-out;
-    -webkit-transition: $el $time ease-in-out;
+	transition: $el $time ease-in-out;
+	-webkit-transition: $el $time ease-in-out;
 }
 
-@mixin lingClamp($line) {
-    display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: $line;
+@mixin lineClamp($line) {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line;
+	margin: 0 auto;
 }
 
 @mixin maxWidth($width) {
-    max-width: $width;
-    margin: 0 auto;
+	max-width: $width;
+	margin: 0 auto;
 }
 
 .box-container-style {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+	border: 1px solid $card_border_color;
+	border-radius: 10px;
 }

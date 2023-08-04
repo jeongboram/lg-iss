@@ -1,7 +1,130 @@
 @charset "utf-8";
 
 .ui-table-type01 {
-    table {
-        width: 100%;
-    }
+	table {
+		width: 100%;
+	}
+}
+
+.ui-tab-type01 {
+	.ui-tab-menu,
+	.ui-tab-contents {
+		width: 100%;
+	}
+	.ui-tab-menu {
+		display: flex;
+		align-items: center;
+		a {
+			display: block;
+			flex-grow: 1;
+			padding: 10px 3px 5px;
+			background-color: transparent;
+			font-size: 18px;
+			text-align: center;
+			color: $disabled-text-color;
+			&.on {
+				border-radius: 10px 10px 0 0;
+				background-color: $card_bg_type02_color;
+				border: 1px solid #535353;
+				border-bottom: none;
+				color: #fff;
+			}
+		}
+	}
+	.ui-tab-contents {
+		background-color: $card_bg_type02_color;
+		border: 1px solid #535353;
+		border-radius: 0 10px 10px 10px;
+		.tab-box {
+			padding: 16px 20px;
+			display: none;
+			&:first-child {
+				display: block;
+			}
+		}
+	}
+}
+
+.ui-dropdown-type01 {
+	width: 124px;
+	height: 32px;
+	select {
+		width: 100%;
+		height: 100%;
+		background-color: #1c1c1c;
+		border-radius: 4px;
+		color: #b8b8b8;
+		font-size: 14px;
+		border: none;
+	}
+}
+
+.ui-tooltip {
+	i {
+		@include btnTextHide(16px, 16px);
+		background-image: url('../../public/res/images/icons/icon-tooltip.png');
+	}
+}
+
+.btn-search {
+	background-color: #55565a;
+	width: 63px;
+	height: 32px;
+	border-radius: 99px;
+	color: #b8b8b8;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.ui-table-default {
+	height: calc(100% - 32px);
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	table {
+		width: 100%;
+		position: relative;
+		th,
+		td {
+			text-align: center;
+			vertical-align: middle;
+			padding: 8px 4px;
+		}
+		thead {
+			border-bottom: 1px solid #fff;
+			tr {
+				background-color: $table-head-bg-color;
+				border-bottom: 1px solid $table-head-border-color;
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				border-bottom: 1px solid #fff;
+			}
+			th {
+				font-size: 11px;
+				color: $table-head-text-color;
+				border-bottom: 1px solid #fff;
+			}
+		}
+		tbody {
+			td {
+				font-size: 12px;
+				color: $table-body-text-color;
+				background-color: $table-body-bg-color;
+				border-bottom: 1px solid $table-body-border-color;
+				@include transition(all, 0.2s);
+			}
+			tr {
+				&:hover {
+					td {
+						background-color: $table-body-hover-bg-color;
+					}
+				}
+			}
+		}
+	}
+	.title {
+		@include lineClamp(1);
+		max-width: 90%;
+	}
 }
