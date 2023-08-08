@@ -75,11 +75,9 @@ function SideBar() {
 				<div className="box-summary-tabs">
 					<div className="ui-tab-type01">
 						<div className="ui-tab-menu">
-							<a href="javascript:void(0);" className="on">
-								Service
-							</a>
-							<a href="javascript:void(0);">Contents</a>
-							<a href="javascript:void(0);">Statistics</a>
+							<a className="on">Service</a>
+							<a>Contents</a>
+							<a>Statistics</a>
 						</div>
 						<div className="ui-tab-contents">
 							<div className="tab-box">

@@ -51,19 +51,25 @@ body,
 	.inner {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		padding: 0 24px;
+		justify-content: flex-start;
+		position: relative;
+	}
+	.nav-hamburger {
+		margin-right: 65px;
+		@include btnTextHide(18px, 18px);
+		background-image: url('../../public/res/images/icons/icon-hamburger.png');
 	}
 	header {
 		h1 {
 			@include textHide();
 		}
 		nav {
-			ul {
+			> ul {
 				display: flex;
 				gap: 48px;
-				li {
-					a {
+				> li {
+					position: relative;
+					> a {
 						display: flex;
 						position: relative;
 						height: 80px;
@@ -94,6 +100,12 @@ body,
 							}
 						}
 					}
+					&:hover {
+						> ul {
+							visibility: visible;
+							opacity: 1;
+						}
+					}
 					.gnb-cdp {
 						background-repeat: no-repeat;
 						background-position: left center;
@@ -101,11 +113,59 @@ body,
 						padding-left: 30px;
 						background-image: url('../../public/res/images/icons/gnb_icon_cdp.png');
 					}
+					> ul {
+						visibility: hidden;
+						opacity: 0;
+						min-width: 152px;
+						position: absolute;
+						top: 100%;
+						left: 50%;
+						transform: translateX(-50%);
+						z-index: 10;
+						padding: 16px 8px;
+						background-color: #010101;
+						@include transition(opacity, 0.2s);
+						> li {
+							> a {
+								display: block;
+								width: 100%;
+								padding: 8px;
+								font-size: 16px;
+								line-height: 23.2px;
+								color: $default-text-color;
+								&:hover {
+									background-color: #282828;
+									color: #fff;
+								}
+							}
+							> ul {
+								li {
+									a {
+										display: block;
+										position: relative;
+										width: 100%;
+										padding: 4px 8px;
+										font-size: 14px;
+										line-height: 20.3px;
+										color: $default-text-color;
+										&:before {
+											display: inline-block;
+											content: '-';
+											margin-right: 3px;
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 		}
 	}
 	.user-control {
+		position: absolute;
+		top: 0;
+		right: 0;
 		display: flex;
 		align-items: center;
 		.running-time,
@@ -189,84 +249,166 @@ body,
 		height: 100%;
 		display: flex;
 		gap: 24px;
-		padding: 36px 24px 24px 24px;
+		// padding: 36px 24px 24px 24px;
 	}
-	.sidebar-section {
-		width: 292px;
-		height: 100%;
+	.contents-section-container {
 		display: flex;
-	}
-	.contents-section {
-		width: calc(100% - 268px);
-
-		.grid-vertical-two {
+		padding: 36px 24px 24px 0;
+		gap: 24px;
+		.sidebar-section {
+			width: 292px;
+			height: 100%;
 			display: flex;
-			gap: 24px;
-			justify-content: space-between;
-			> .grid-left {
-				width: 1030px;
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-			}
-			> .grid-right {
-				width: calc(100% - 1054px);
-				display: flex;
-				flex-direction: column;
-				gap: 24px;
-			}
 		}
-		.grid-column-2 {
-			display: flex;
-			gap: 24px;
-			justify-content: space-between;
-			> div {
-				width: calc(50% - 12px);
-			}
-		}
-		.head {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			.title {
-				h1 {
-					font-size: 600;
-					color: #fff;
-					font-size: 28px;
+		.contents-section {
+			.grid-vertical-two {
+				display: flex;
+				gap: 24px;
+				justify-content: space-between;
+				> .grid-left {
+					width: 1030px;
+					display: flex;
+					flex-direction: column;
+					gap: 24px;
+				}
+				> .grid-right {
+					width: calc(100% - 1054px);
+					display: flex;
+					flex-direction: column;
+					gap: 24px;
 				}
 			}
-			.ui-components-box {
+			.grid-column-2 {
 				display: flex;
-				align-items: center;
-				gap: 8px;
+				gap: 24px;
+				justify-content: space-between;
+				> div {
+					width: calc(50% - 12px);
+				}
 			}
-		}
-		.box-tbl {
-			@extend .box-container-style;
-			padding: 20px 20px 0 20px;
-			background-color: $card_bg_type01_color;
 			.head {
-				margin-bottom: 16px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 				.title {
+					h1 {
+						font-size: 600;
+						color: #fff;
+						font-size: 28px;
+					}
+				}
+				.ui-components-box {
 					display: flex;
 					align-items: center;
-					h2 {
-						font-size: 14px;
-						color: #fff;
-						font-weight: 600;
-					}
-					.ui-tooltip {
-						position: relative;
-						margin-left: 4px;
-						.tooltip {
-							position: absolute;
-							top: 0;
-							right: 0;
-							opacity: 0;
+					gap: 8px;
+				}
+			}
+			.box-tbl {
+				@extend .box-container-style;
+				padding: 20px 20px 0 20px;
+				background-color: $card_bg_type01_color;
+				.head {
+					margin-bottom: 16px;
+					.title {
+						display: flex;
+						align-items: center;
+						h2 {
+							font-size: 14px;
+							color: #fff;
+							font-weight: 600;
+						}
+						.ui-tooltip {
+							position: relative;
+							margin-left: 4px;
+							.tooltip {
+								position: absolute;
+								top: 0;
+								right: 0;
+								opacity: 0;
+							}
 						}
 					}
 				}
 			}
+		}
+	}
+
+	.hamburger-sub-nav {
+		width: 186px;
+		height: 100%;
+		padding: 36px 16px;
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+		background-color: #010101;
+		position: relative;
+		@include transition(all, 0.2s);
+		> ul {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			> li {
+				> a {
+					display: block;
+					position: relative;
+					padding: 4px 0 4px 32px;
+					line-height: 23.2px;
+					font-size: 16px;
+					color: #fff;
+					&:before {
+						@include psuedoBg();
+						width: 24px;
+						height: 24px;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+						filter: brightness(100);
+					}
+					&.sub-nav-dashboard:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-dashboard.png');
+					}
+					&.sub-nav-service:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-service.png');
+					}
+					&.sub-nav-contents:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-contents.png');
+					}
+					&.sub-nav-statis:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-statis.png');
+					}
+					&.sub-nav-predetection:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-predetection.png');
+					}
+					&.sub-nav-issuehistory:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-issuehistory.png');
+					}
+				}
+				> ul {
+					> li {
+						> a {
+							display: block;
+							position: relative;
+							padding: 4px 0 4px 40px;
+							line-height: 20.3px;
+							font-size: 14px;
+							color: #b8b8b8;
+							&:before {
+								content: '-';
+								position: absolute;
+								top: 3px;
+								left: 32px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn-toggle {
+			@include btnTextHide(24px, 34px);
+			position: absolute;
+			background-image: url('../../public/res/images/icons/lnb-close.png');
+			bottom: 32px;
+			right: 0;
+			z-index: 5;
 		}
 	}
 }
@@ -319,6 +461,9 @@ body,
 	}
 	.box-summary-tabs {
 		margin-bottom: 20px;
+		.tab-box {
+			padding: 20px 0 16px 0;
+		}
 		.contents-service {
 			display: flex;
 			flex-direction: column;
@@ -326,10 +471,10 @@ body,
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				padding: 16px 0;
+				padding: 16px 20px;
 				border-top: 1px solid $card_border_color;
 				&:nth-child(1) {
-					padding: 0 0 8px 0;
+					padding: 0 20px 8px 20px;
 					align-items: flex-start;
 					border-top: none;
 					.num-summary {
@@ -385,7 +530,9 @@ body,
 			}
 			.ui-chart-container {
 				border-top: 1px solid $card_border_color;
+				padding: 16px 20px 0 20px;
 				h3 {
+					margin-bottom: 8px;
 					font-size: 18px;
 					color: #fff;
 					font-weight: 600;
