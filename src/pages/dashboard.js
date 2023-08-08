@@ -78,13 +78,12 @@ const Dashboard = () => {
 										<DropDown item={countries} />
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
-									<div className="ui-chart-container">
-										<div style={{ width: '300px', height: '300px' }}>
-											<Doughnut data={data} />
-										</div>
+								</div>
+								<div className="ui-chart-container">
+									<div style={{ width: '300px', height: '300px' }}>
+										<Doughnut data={data} />
 									</div>
 								</div>
-								<div className="ui-chart-container"></div>
 							</div>
 							<div className="grid-column-2">
 								<div className="grid-left">
