@@ -240,6 +240,92 @@ body,
 			}
 		}
 	}
+	.hamburger-sub-nav {
+		width: 186px;
+		height: calc(100% - 80px);
+		padding: 36px 16px;
+		border-right: 1px solid rgba(255, 255, 255, 0.2);
+		background-color: #010101;
+		position: fixed;
+		top: 80px;
+		z-index: 10;
+		visibility: hidden;
+		opacity: 0;
+		@include transition(all, 0.2s);
+		> ul {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			> li {
+				> a {
+					display: block;
+					position: relative;
+					padding: 4px 0 4px 32px;
+					line-height: 23.2px;
+					font-size: 16px;
+					color: #fff;
+					&:before {
+						@include psuedoBg();
+						width: 24px;
+						height: 24px;
+						position: absolute;
+						top: 50%;
+						left: 0;
+						transform: translateY(-50%);
+						filter: brightness(100);
+					}
+					&.sub-nav-dashboard:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-dashboard.png');
+					}
+					&.sub-nav-service:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-service.png');
+					}
+					&.sub-nav-contents:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-contents.png');
+					}
+					&.sub-nav-statis:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-statis.png');
+					}
+					&.sub-nav-predetection:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-predetection.png');
+					}
+					&.sub-nav-issuehistory:before {
+						background-image: url('../../public/res/images/icons/lnb-icon-issuehistory.png');
+					}
+				}
+				> ul {
+					> li {
+						> a {
+							display: block;
+							position: relative;
+							padding: 4px 0 4px 40px;
+							line-height: 20.3px;
+							font-size: 14px;
+							color: #b8b8b8;
+							&:before {
+								content: '-';
+								position: absolute;
+								top: 3px;
+								left: 32px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.btn-toggle {
+			@include btnTextHide(24px, 34px);
+			position: absolute;
+			background-image: url('../../public/res/images/icons/lnb-close.png');
+			bottom: 32px;
+			right: 0;
+			z-index: 5;
+		}
+		&.on {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }
 
 .main-container {
@@ -330,85 +416,6 @@ body,
 					}
 				}
 			}
-		}
-	}
-
-	.hamburger-sub-nav {
-		width: 186px;
-		height: 100%;
-		padding: 36px 16px;
-		border-right: 1px solid rgba(255, 255, 255, 0.2);
-		background-color: #010101;
-		position: relative;
-		@include transition(all, 0.2s);
-		> ul {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-			> li {
-				> a {
-					display: block;
-					position: relative;
-					padding: 4px 0 4px 32px;
-					line-height: 23.2px;
-					font-size: 16px;
-					color: #fff;
-					&:before {
-						@include psuedoBg();
-						width: 24px;
-						height: 24px;
-						position: absolute;
-						top: 50%;
-						left: 0;
-						transform: translateY(-50%);
-						filter: brightness(100);
-					}
-					&.sub-nav-dashboard:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-dashboard.png');
-					}
-					&.sub-nav-service:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-service.png');
-					}
-					&.sub-nav-contents:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-contents.png');
-					}
-					&.sub-nav-statis:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-statis.png');
-					}
-					&.sub-nav-predetection:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-predetection.png');
-					}
-					&.sub-nav-issuehistory:before {
-						background-image: url('../../public/res/images/icons/lnb-icon-issuehistory.png');
-					}
-				}
-				> ul {
-					> li {
-						> a {
-							display: block;
-							position: relative;
-							padding: 4px 0 4px 40px;
-							line-height: 20.3px;
-							font-size: 14px;
-							color: #b8b8b8;
-							&:before {
-								content: '-';
-								position: absolute;
-								top: 3px;
-								left: 32px;
-							}
-						}
-					}
-				}
-			}
-		}
-		.btn-toggle {
-			@include btnTextHide(24px, 34px);
-			position: absolute;
-			background-image: url('../../public/res/images/icons/lnb-close.png');
-			bottom: 32px;
-			right: 0;
-			z-index: 5;
 		}
 	}
 }

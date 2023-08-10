@@ -9,7 +9,6 @@ import IssueHistory from './pages/issuehistory';
 import Header from './components/layout/Header';
 import './styles/font.css';
 import './styles/ui.scss';
-import SubNav from './components/layout/SubNav';
 
 function App() {
 	return (
@@ -17,10 +16,6 @@ function App() {
 			<Header />
 			<div className="main-container">
 				<div className="inner">
-					<div className="hamburger-sub-nav">
-						<SubNav />
-						<button className="btn-toggle">서브메뉴 닫기</button>
-					</div>
 					<Routes>
 						<Route exact path="/" element={<Dashboard />} />
 						<Route path="/service" element={<Service />} />

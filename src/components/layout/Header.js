@@ -1,13 +1,21 @@
-import React from 'react';
+import classNames from 'classnames';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SubNav from './SubNav';
 
 function Header() {
+
+	const [lnbMenu, setLnbMenu] = useState(false)
+
+	const onLnbMenu = () => {
+		setLnbMenu(!lnbMenu);
+	}
+
 	return (
 		<>
 			<div className="header-container">
 				<div className="inner">
-					<button className="nav-hamburger">서브 메뉴 보기</button>
+					<button className="nav-hamburger" onClick={onLnbMenu}>서브 메뉴 보기</button>
 					<header>
 						<h1>LG ISS</h1>
 						<nav>
@@ -65,6 +73,10 @@ function Header() {
 								<li>Dropmenu3</li>
 							</ul>
 						</div>
+					</div>
+					<div className={classNames('hamburger-sub-nav', { on: lnbMenu })}>
+						<SubNav />
+						<button className="btn-toggle" onClick={onLnbMenu}>서브메뉴 닫기</button>
 					</div>
 				</div>
 			</div>
