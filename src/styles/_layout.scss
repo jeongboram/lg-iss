@@ -333,13 +333,11 @@ body,
 	max-height: 1000px;
 	.inner {
 		height: 100%;
-		display: flex;
-		gap: 24px;
 		// padding: 36px 24px 24px 24px;
 	}
 	.contents-section-container {
 		display: flex;
-		padding: 36px 24px 24px 0;
+		padding: 36px 0 24px 0;
 		gap: 24px;
 		.sidebar-section {
 			width: 292px;
@@ -347,6 +345,7 @@ body,
 			display: flex;
 		}
 		.contents-section {
+			width: calc(100% - 292px);
 			.grid-vertical-two {
 				display: flex;
 				gap: 24px;
@@ -358,7 +357,7 @@ body,
 					gap: 24px;
 				}
 				> .grid-right {
-					width: calc(100% - 1054px);
+					width: calc(100% - 1030px);
 					display: flex;
 					flex-direction: column;
 					gap: 24px;
