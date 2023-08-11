@@ -4,12 +4,9 @@ import DefaultButton from '../components/common/DefaultButton';
 import DoughnutChart from '../components/charts/DoughnutChart';
 import IssTable from '../components/common/IssTable'
 import DropDown from '../components/common/DropDown';
-import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
 // import { Doughnut } from 'react-chartjs-2';
 import DefaultTable from '../components/common/DefaultTable';
 import DoughnutLegend from '../components/charts/DoughnutLegend';
-
-ChartJS.register(ArcElement, Tooltip);
 
 // export const data = {
 // 	labels: ['LG Channels App Issues', 'Image Issues', 'Channel Map Issues', 'Schedule Issues', 'Playback Issues'],
@@ -159,16 +156,7 @@ const Dashboard = () => {
 								<DefaultTable height={`calc(100% - 32px)`} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<div className="head">
-									<div className="title">
-										<h2>Schedule Issues</h2>
-										<div className="ui-tooltip">
-											<i>툴팁</i>
-											<div className="tooltip">tooltip</div>
-										</div>
-									</div>
-								</div>
-								<IssTable height={`calc(100% - 32px)`} />
+								<IssTable height={`calc(100% - 32px)`} tableTitle='Schedule Issues'/>
 							</div>
 						</div>
 					</div>

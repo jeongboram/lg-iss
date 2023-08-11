@@ -8,7 +8,10 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 
+export const ISSTABLE_DEFAULT_TITLE = 'title'
+
 const IssTable = (props) => {
+	const { tableTitle } = props;
 	
 	const useStyles = makeStyles({
 		tableWrapper: {
@@ -59,35 +62,46 @@ const IssTable = (props) => {
 	}
 
 	return (
-		<TableContainer component={Paper} className={classes.tableWrapper}>
-			<Table stickyHeader={true} className={classes.table} aria-label="simple table">
-				<TableHead>
-					<TableRow>
-						{ data.header.map((_header) => (
-							<TableCell key={_header} className={classes.thead}>{_header}</TableCell>
-						))}
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					{data.rowdata.map((rowItem, _idx) => (
-						<TableRow key={`row_${_idx}`}>
-							{ rowItem.row.map((colItem, _idxitem) => (
-								_idxitem === 0 ? 
-								<>
-								<TableCell component="th" scope="row" className={classes.tbody}>
-									{colItem}
-								</TableCell>
-								</>
-								:
-								<>
-								<TableCell className={classes.tbody}>{colItem}</TableCell>
-								</>
+		<>
+			<div className="head">
+				<div className="title">
+					<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE }</h2>
+					<div className="ui-tooltip">
+						<i>툴팁</i>
+						<div className="tooltip">tooltip</div>
+					</div>
+				</div>
+			</div>
+			<TableContainer component={Paper} className={classes.tableWrapper}>
+				<Table stickyHeader={true} className={classes.table} aria-label="simple table">
+					<TableHead>
+						<TableRow>
+							{ data.header.map((_header) => (
+								<TableCell key={_header} className={classes.thead}>{_header}</TableCell>
 							))}
 						</TableRow>
-					))}
-				</TableBody>
-			</Table>
-		</TableContainer>
+					</TableHead>
+					<TableBody>
+						{data.rowdata.map((rowItem, _idx) => (
+							<TableRow key={`row_${_idx}`}>
+								{ rowItem.row.map((colItem, _idxitem) => (
+									_idxitem === 0 ? 
+									<>
+									<TableCell component="th" scope="row" className={classes.tbody}>
+										{colItem}
+									</TableCell>
+									</>
+									:
+									<>
+									<TableCell className={classes.tbody}>{colItem}</TableCell>
+									</>
+								))}
+							</TableRow>
+						))}
+					</TableBody>
+				</Table>
+			</TableContainer>
+		</>
 	);
 };
 
