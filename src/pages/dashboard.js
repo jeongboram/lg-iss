@@ -96,8 +96,8 @@ const Dashboard = () => {
 										<h1>Monitoring World Map</h1>
 									</div>
 									<div className="ui-components-box">
-										<DropDown item={region} />
-										<DropDown item={countries} />
+										<DropDown item={region} title="Region" />
+										<DropDown item={countries} title="Countries"/>
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
 								</div>

@@ -1,7 +1,9 @@
 import React, { useRef } from 'react';
 
+export const DEFAULT_TITLE = 'selected';
+
 function DropDown(props) {
-	const { item } = props;
+	const { item, title } = props;
 	const inputAllRef = useRef();
 
 	const onSelect = () => {
@@ -15,7 +17,7 @@ function DropDown(props) {
 	return (
 		<>
 			<div className="ui-dropdown-type01">
-				<div className="label">0 {item.dropdown_title}</div>
+				<div className="label">0 {title || DEFAULT_TITLE}</div>
 				<ul>
 					<li>
 						<label onClick={onSelect}>
