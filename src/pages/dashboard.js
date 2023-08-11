@@ -2,65 +2,10 @@ import React, { useEffect, useState } from 'react';
 import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
 import DoughnutChart from '../components/charts/DoughnutChart';
-import IssTable from '../components/common/IssTable'
+import IssTable from '../components/common/IssTable';
 import DropDown from '../components/common/DropDown';
-// import { Doughnut } from 'react-chartjs-2';
 import DefaultTable from '../components/common/DefaultTable';
 import DoughnutLegend from '../components/charts/DoughnutLegend';
-
-// export const data = {
-// 	labels: ['LG Channels App Issues', 'Image Issues', 'Channel Map Issues', 'Schedule Issues', 'Playback Issues'],
-// 	datasets: [
-// 		{
-// 			label: 'AIC(US)',
-// 			data: [12, 19, 3, 5, 2, 3],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'EIC(EU)',
-// 			data: [0],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(BR)',
-// 			data: [10, 5],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'EIC(JA)',
-// 			data: [10, 20],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(AJ)',
-// 			data: [20, 5],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(KR)',
-// 			data: [10],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 	],
-// };
 
 const Dashboard = () => {
 	const [region, setRegion] = useState([]);
@@ -94,7 +39,7 @@ const Dashboard = () => {
 									</div>
 									<div className="ui-components-box">
 										<DropDown item={region} title="Region" />
-										<DropDown item={countries} title="Countries"/>
+										<DropDown item={countries} title="Countries" />
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
 								</div>
@@ -123,7 +68,7 @@ const Dashboard = () => {
 												</div>
 											</div>
 										</div>
-										<DefaultTable height={`calc(100% - 32px)`} />
+										<DefaultTable height={`calc(100% - 40px)`} />
 									</div>
 								</div>
 								<div className="grid-right">
@@ -137,7 +82,7 @@ const Dashboard = () => {
 												</div>
 											</div>
 										</div>
-										<DefaultTable height={`calc(100% - 32px)`} />
+										<DefaultTable height={`calc(100% - 40px)`} />
 									</div>
 								</div>
 							</div>
@@ -153,10 +98,10 @@ const Dashboard = () => {
 										</div>
 									</div>
 								</div>
-								<DefaultTable height={`calc(100% - 32px)`} />
+								<DefaultTable height={`calc(100% - 40px)`} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<IssTable height={`calc(100% - 32px)`} tableTitle='Schedule Issues'/>
+								<IssTable height={`calc(100% - 32px)`} tableTitle='Service Data Issues'/>
 							</div>
 						</div>
 					</div>

@@ -384,6 +384,8 @@ body,
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				position: relative;
+				z-index: 50;
 				.title {
 					h1 {
 						font-size: 600;
@@ -407,7 +409,7 @@ body,
 						display: flex;
 						align-items: center;
 						h2 {
-							font-size: 14px;
+							font-size: 18px;
 							color: #fff;
 							font-weight: 600;
 						}
@@ -721,7 +723,7 @@ body,
 	height: 324px;
 }
 .box-imageIssues {
-	height: 596px;
+	height: 594px;
 }
 
 .box-secheduleIssues {

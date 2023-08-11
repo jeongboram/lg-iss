@@ -16,7 +16,7 @@ const DoughnutLegend = () => {
 					</li>
 					<li>
 						<i style={{ backgroundColor: `${CHART_COLORS.MINT}` }}></i>
-						<span>Channel Map Issues</span>
+						<span>Service Data Issues</span>
 					</li>
 					<li>
 						<i style={{ backgroundColor: `${CHART_COLORS.BLUE}` }}></i>
