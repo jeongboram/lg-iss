@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LineChart from '../charts/LineChart';
 // import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 // import { Line } from 'react-chartjs-2';
@@ -40,6 +40,14 @@ import LineChart from '../charts/LineChart';
 // };
 
 function SideBar() {
+	const [currentTab, clickTab] = useState(0);
+
+	const tabMenus = ['Service', 'Contents', 'Statistics'];
+
+	const onSelectMenu = (index) => {
+		clickTab(index);
+	};
+
 	const onSubmit = (e) => {
 		e.preventDefault();
 		console.log('on submit');
@@ -76,44 +84,108 @@ function SideBar() {
 				<div className="box-summary-tabs">
 					<div className="ui-tab-type01">
 						<div className="ui-tab-menu">
-							<a className="on">Service</a>
-							<a>Contents</a>
-							<a>Statistics</a>
+							{tabMenus.map((el, index) => (
+								<a key={index} className={index === currentTab ? 'on' : ''} onClick={() => onSelectMenu(index)}>
+									{el}
+								</a>
+							))}
 						</div>
 						<div className="ui-tab-contents">
 							<div className="tab-box">
-								<div className="contents-service">
-									<div className="line">
-										<h3>Issue Count</h3>
-										<div className="num-summary">
-											<strong>1,842</strong>
-											<span className="new">5</span>
+								{currentTab === 0 && (
+									<div className="contents-service">
+										<div className="line">
+											<h3>Issue Count</h3>
+											<div className="num-summary">
+												<strong>1,842</strong>
+												<span className="new">5</span>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Unaddressed</h3>
+											<div className="num-summary">
+												<strong>76</strong>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Precessing</h3>
+											<div className="num-summary">
+												<strong>95</strong>
+											</div>
+										</div>
+										<div className="ui-chart-container">
+											<h3>
+												Status of issues by time zone <span>(Based on UTC)</span>
+											</h3>
+											<div className="chart-wrap">
+												<LineChart />
+											</div>
 										</div>
 									</div>
-									<div className="line">
-										<h3>Unaddressed</h3>
-										<div className="num-summary">
-											<strong>76</strong>
+								)}
+								{currentTab === 1 && (
+									<div className="contents-service">
+										<div className="line">
+											<h3>Issue Count</h3>
+											<div className="num-summary">
+												<strong>1,842</strong>
+												<span className="new">5</span>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Unaddressed</h3>
+											<div className="num-summary">
+												<strong>76</strong>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Precessing</h3>
+											<div className="num-summary">
+												<strong>95</strong>
+											</div>
+										</div>
+										<div className="ui-chart-container">
+											<h3>
+												Status of issues by time zone <span>(Based on UTC)</span>
+											</h3>
+											<div className="chart-wrap">
+												<LineChart />
+											</div>
 										</div>
 									</div>
-									<div className="line">
-										<h3>Precessing</h3>
-										<div className="num-summary">
-											<strong>95</strong>
+								)}
+								{currentTab === 2 && (
+									<div className="contents-service">
+										<div className="line">
+											<h3>Issue Count</h3>
+											<div className="num-summary">
+												<strong>1,842</strong>
+												<span className="new">5</span>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Unaddressed</h3>
+											<div className="num-summary">
+												<strong>76</strong>
+											</div>
+										</div>
+										<div className="line">
+											<h3>Precessing</h3>
+											<div className="num-summary">
+												<strong>95</strong>
+											</div>
+										</div>
+										<div className="ui-chart-container">
+											<h3>
+												Status of issues by time zone <span>(Based on UTC)</span>
+											</h3>
+											<div className="chart-wrap">
+												<LineChart />
+											</div>
 										</div>
 									</div>
-									<div className="ui-chart-container">
-										<h3>
-											Status of issues by time zone <span>(Based on UTC)</span>
-										</h3>
-										<div className="chart-wrap">
-											<LineChart />
-										</div>
-									</div>
-								</div>
+								)}
 							</div>
-							<div className="tab-box">Contents Tab Contents</div>
-							<div className="tab-box">Statistics Tab Contents</div>
 						</div>
 					</div>
 				</div>
