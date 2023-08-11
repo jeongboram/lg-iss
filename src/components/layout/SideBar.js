@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ServiceTab from '../contents/ServiceTab';
 import ContentsTab from '../contents/ContentsTab';
 import StatisTab from '../contents/StatisTab';
+import { useNavigate } from 'react-router';
 // import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 // import { Line } from 'react-chartjs-2';
 // import faker from 'faker';
@@ -44,9 +45,16 @@ import StatisTab from '../contents/StatisTab';
 function SideBar() {
 	const [currentTab, clickTab] = useState(0);
 
-	const tabMenus = ['Service', 'Contents', 'Statistics'];
+	const navigate = useNavigate();
 
-	const onSelectMenu = (index) => {
+	const tabMenus = [
+		{ name: 'Service', link: '/' },
+		{ name: 'Contents', link: '/dashboard-contents' },
+		{ name: 'Statistics', link: '/dashboard-statistics' },
+	];
+
+	const onSelectMenu = (index, link) => {
+		navigate(link);
 		clickTab(index);
 	};
 
@@ -75,8 +83,8 @@ function SideBar() {
 					<div className="ui-tab-type01">
 						<div className="ui-tab-menu">
 							{tabMenus.map((el, index) => (
-								<a key={index} className={index === currentTab ? 'on' : ''} onClick={() => onSelectMenu(index)}>
-									{el}
+								<a key={index} className={index === currentTab ? 'on' : ''} onClick={() => onSelectMenu(index, el.link)}>
+									{el.name}
 								</a>
 							))}
 						</div>

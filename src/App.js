@@ -1,12 +1,14 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
+import DashboardService from './pages/dashboard-service';
+import DashboardContents from './pages/dashboard-contents';
 import Service from './pages/service';
 import Contents from './pages/contents';
 import Statistics from './pages/statistics';
 import PreDetection from './pages/predetection';
 import IssueHistory from './pages/issuehistory';
 import Header from './components/layout/Header';
+import DashboardStatistics from './pages/dashboard-statistics';
 import './styles/font.css';
 import './styles/ui.scss';
 
@@ -17,7 +19,10 @@ function App() {
 			<div className="main-container">
 				<div className="inner">
 					<Routes>
-						<Route exact path="/" element={<Dashboard />} />
+						<Route exact path="/" element={<DashboardService />} />
+						<Route path="/dashboard-contents" element={<DashboardContents />} />
+						<Route path="/dashboard-statistics" element={<DashboardStatistics />} />
+						<Route path="/service" element={<Service />} />
 						<Route path="/service" element={<Service />} />
 						<Route path="/contents" element={<Contents />} />
 						<Route path="/statistics" element={<Statistics />} />
