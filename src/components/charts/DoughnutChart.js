@@ -9,6 +9,20 @@ export const DEFAULT_DOUGHNUT_WIDTH = "300px";
 export const DEFAULT_DOUGHNUT_HEIGHT = "300px";
 
 const DoughnutChart = (props) => {
+
+	// useEffect(() => {
+	// 	window.addEventListener('beforeprint', handleMore);
+	// 	window.addEventListener('afterprint', handleMore);
+	// 	return (() => {
+	// 		window.removeEventListener('beforeprint', handleMore);
+	// 		window.removeEventListener('afterprint', handleMore);
+	// 	})
+	// }, []);
+
+	// const beforePrintHandler = () => {
+
+	// }
+
 	const { width, height } = props;
 	
 	// const data = {
@@ -56,50 +70,10 @@ const DoughnutChart = (props) => {
 				label: 'AIC(US)',
 				data: [12, 19, 3, 5, 2, 3],
 				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
+				borderWidth: 1,
 				borderRadius: 2,
-				cutout: '70%',
-			},
-			{
-				label: 'EIC(EU)',
-				data: [0],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
-				borderRadius: 2,
-				cutout: '70%',
-			},
-			{
-				label: 'KIC(BR)',
-				data: [10, 5],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
-				borderRadius: 2,
-				cutout: '70%',
-			},
-			{
-				label: 'EIC(JA)',
-				data: [10, 20],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
-				borderRadius: 2,
-				cutout: '70%',
-			},
-			{
-				label: 'KIC(AJ)',
-				data: [20, 5],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
-				borderRadius: 2,
-				cutout: '70%',
-			},
-			{
-				label: 'KIC(KR)',
-				data: [10],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 0,
-				borderRadius: 2,
-				cutout: '70%',
-			},
+				cutout: '80%',
+			}
 		],
 	};
 

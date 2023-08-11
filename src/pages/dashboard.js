@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
 import DoughnutChart from '../components/charts/DoughnutChart';
+import IssTable from '../components/common/IssTable'
 import DropDown from '../components/common/DropDown';
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
 // import { Doughnut } from 'react-chartjs-2';
@@ -102,7 +103,7 @@ const Dashboard = () => {
 								<div className="ui-chart-container">
 									{/* <div style={{ width: '100%', height: '100%' }}> */}
 										{/* <Doughnut data={data} /> */}
-										<DoughnutChart width="300px;" height="300px" data=""/>
+										<DoughnutChart width="100px;" height="100px" data=""/>
 									{/* </div> */}
 								</div>
 							</div>
@@ -160,7 +161,7 @@ const Dashboard = () => {
 										</div>
 									</div>
 								</div>
-								<DefaultTable height={`calc(100% - 32px)`} />
+								<IssTable height={`calc(100% - 32px)`} />
 							</div>
 						</div>
 					</div>
