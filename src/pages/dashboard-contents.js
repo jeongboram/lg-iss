@@ -37,7 +37,7 @@ const DashboardContents = () => {
 									<div className="ui-components-box">
 										<DropDown item={region} title="Region" />
 										<DropDown item={countries} title="Countries" />
-										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
+										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} pagination={false} />
 									</div>
 								</div>
 								<div className="ui-chart-container">data flow</div>
@@ -45,19 +45,19 @@ const DashboardContents = () => {
 							<div className="grid-column-2">
 								<div className="grid-left">
 									<div className="box-cmpIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="CMP Issues" />
+										<DefaultTable height={`calc(100% - 40px)`} tableTitle="CMP Issues" pagination={false} />
 									</div>
 								</div>
 								<div className="grid-right">
 									<div className="box-deviceIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Device Issues" />
+										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Device Issues" pagination={false} />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="grid-right">
 							<div className="box-cpIssues box-tbl">
-								<DefaultTable height={`calc(100% - 40px)`} tableTitle="CP Issues" />
+								<DefaultTable height={`calc(100% - 40px)`} tableTitle="CP Issues" pagination={false} />
 							</div>
 						</div>
 					</div>

@@ -554,9 +554,10 @@ canvas { height: 100 !important }
 					margin: 4px 0 0 0;
 					&:before {
 						@include psuedoBg();
-						background-image: url('../../public/res/images/icons/icon_new.png');
+						background-image: url('../../public/res/images/icons/icon_new.gif');
+						background-size: 100% 100%;
 						width: 25px;
-						height: 12px;
+						height: 15px;
 						position: absolute;
 						top: 0;
 						left: 0;

@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
 
 export const DEFAULT_TITLE = 'title';
 
@@ -28,12 +29,12 @@ const rows = [
 ];
 
 const DefaultTable = (props) => {
-	const { tableTitle } = props;
+	const { height, tableTitle, pagination } = props;
 
 	const useStyles = makeStyles({
 		tableWrapper: {
 			width: '100%',
-			height: props.height,
+			height: height,
 			backgroundColor: 'transparent',
 			borderRadius: '0',
 		},
@@ -98,6 +99,7 @@ const DefaultTable = (props) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
+			{pagination && <Pagination count={10} showFirstButton showLastButton className="ui-pagination" />}
 		</>
 	);
 };

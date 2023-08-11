@@ -262,3 +262,17 @@
 
 .chart-type-donut {
 }
+
+.ui-pagination {
+	margin: 12px 0 0 0;
+	ul {
+		align-items: center;
+		justify-content: center;
+		li {
+			button,
+			> div {
+				color: #fff;
+			}
+		}
+	}
+}
