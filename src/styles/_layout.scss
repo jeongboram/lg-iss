@@ -260,19 +260,21 @@ body,
 				> a {
 					display: block;
 					position: relative;
-					padding: 4px 0 4px 32px;
+					padding: 4px 0 4px 40px;
 					line-height: 23.2px;
 					font-size: 16px;
 					color: #fff;
+					@include transition(all, 0.2s);
 					&:before {
 						@include psuedoBg();
 						width: 24px;
 						height: 24px;
 						position: absolute;
 						top: 50%;
-						left: 0;
+						left: 8px;
 						transform: translateY(-50%);
 						filter: brightness(100);
+						@include transition(all, 0.1s);
 					}
 					&.sub-nav-dashboard:before {
 						background-image: url('../../public/res/images/icons/lnb-icon-dashboard.png');
@@ -291,6 +293,13 @@ body,
 					}
 					&.sub-nav-issuehistory:before {
 						background-image: url('../../public/res/images/icons/lnb-icon-issuehistory.png');
+					}
+					&:hover {
+						background-color: $primary_accent_color;
+						color: $base_dark_color;
+						&:before {
+							filter: brightness(0);
+						}
 					}
 				}
 				> ul {
@@ -337,7 +346,7 @@ body,
 	}
 	.contents-section-container {
 		display: flex;
-		padding: 36px 0 24px 0;
+		padding: 36px 24px 24px 24px;
 		gap: 24px;
 		.sidebar-section {
 			width: 292px;
@@ -357,7 +366,7 @@ body,
 					gap: 24px;
 				}
 				> .grid-right {
-					width: calc(100% - 1030px);
+					width: calc(100% - 1030px - 24px);
 					display: flex;
 					flex-direction: column;
 					gap: 24px;
@@ -605,15 +614,18 @@ body,
 		table {
 			width: 100%;
 			border-collapse: collapse;
+			border-top: 1px solid $table-body-border-color;
 			th,
 			td {
 				border-bottom: 1px solid $table-body-border-color;
 				font-size: 10px;
-				padding: 8px 12px;
+				padding: 3px 12px;
+				line-height: 14.5px;
 			}
 			th {
 				background-color: #282828;
 				text-align: center;
+				width: 65px;
 			}
 			td {
 				text-align: left;
