@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
 import DoughnutChart from '../components/charts/DoughnutChart';
-import IssTable from '../components/common/IssTable'
+import IssTable from '../components/common/IssTable';
 import DropDown from '../components/common/DropDown';
 import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
 // import { Doughnut } from 'react-chartjs-2';
@@ -97,7 +97,7 @@ const Dashboard = () => {
 									</div>
 									<div className="ui-components-box">
 										<DropDown item={region} title="Region" />
-										<DropDown item={countries} title="Countries"/>
+										<DropDown item={countries} title="Countries" />
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
 								</div>
@@ -126,7 +126,7 @@ const Dashboard = () => {
 												</div>
 											</div>
 										</div>
-										<DefaultTable height={`calc(100% - 32px)`} />
+										<DefaultTable height={`calc(100% - 40px)`} />
 									</div>
 								</div>
 								<div className="grid-right">
@@ -140,7 +140,7 @@ const Dashboard = () => {
 												</div>
 											</div>
 										</div>
-										<DefaultTable height={`calc(100% - 32px)`} />
+										<DefaultTable height={`calc(100% - 40px)`} />
 									</div>
 								</div>
 							</div>
@@ -156,19 +156,19 @@ const Dashboard = () => {
 										</div>
 									</div>
 								</div>
-								<DefaultTable height={`calc(100% - 32px)`} />
+								<DefaultTable height={`calc(100% - 40px)`} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
 								<div className="head">
 									<div className="title">
-										<h2>Schedule Issues</h2>
+										<h2>Service Data Issues</h2>
 										<div className="ui-tooltip">
 											<i>툴팁</i>
 											<div className="tooltip">tooltip</div>
 										</div>
 									</div>
 								</div>
-								<IssTable height={`calc(100% - 32px)`} />
+								<IssTable height={`calc(100% - 40px)`} />
 							</div>
 						</div>
 					</div>
