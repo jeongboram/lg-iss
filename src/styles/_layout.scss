@@ -260,19 +260,21 @@ body,
 				> a {
 					display: block;
 					position: relative;
-					padding: 4px 0 4px 32px;
+					padding: 4px 0 4px 40px;
 					line-height: 23.2px;
 					font-size: 16px;
 					color: #fff;
+					@include transition(all, 0.2s);
 					&:before {
 						@include psuedoBg();
 						width: 24px;
 						height: 24px;
 						position: absolute;
 						top: 50%;
-						left: 0;
+						left: 8px;
 						transform: translateY(-50%);
 						filter: brightness(100);
+						@include transition(all, 0.1s);
 					}
 					&.sub-nav-dashboard:before {
 						background-image: url('../../public/res/images/icons/lnb-icon-dashboard.png');
@@ -291,6 +293,13 @@ body,
 					}
 					&.sub-nav-issuehistory:before {
 						background-image: url('../../public/res/images/icons/lnb-icon-issuehistory.png');
+					}
+					&:hover {
+						background-color: $primary_accent_color;
+						color: $base_dark_color;
+						&:before {
+							filter: brightness(0);
+						}
 					}
 				}
 				> ul {
