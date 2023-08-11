@@ -117,22 +117,22 @@ const DashboardService = () => {
 							<div className="grid-column-2">
 								<div className="grid-left">
 									<div className="box-appIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Service Data Issues" />
+										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Service Data Issues" pagination={false} />
 									</div>
 								</div>
 								<div className="grid-right">
 									<div className="box-playbackIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Playback Issues" />
+										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Playback Issues" pagination={false} />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="grid-right">
 							<div className="box-imageIssues box-tbl">
-								<DefaultTable height={`calc(100% - 40px)`} tableTitle="Image Issues" />
+								<DefaultTable height={`calc(100% - 40px)`} tableTitle="Image Issues" pagination={false} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<IssTable height={`calc(100% - 32px)`} tableTitle="Service Data Issues" />
+								<IssTable height={`calc(100% - 40px)`} tableTitle="Service Data Issues" pagination={false} />
 							</div>
 						</div>
 					</div>

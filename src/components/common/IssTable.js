@@ -7,16 +7,17 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
+import Pagination from '@material-ui/lab/Pagination';
 
-export const ISSTABLE_DEFAULT_TITLE = 'title'
+export const ISSTABLE_DEFAULT_TITLE = 'title';
 
 const IssTable = (props) => {
-	const { tableTitle } = props;
-	
+	const { height, tableTitle, pagination } = props;
+
 	const useStyles = makeStyles({
 		tableWrapper: {
 			width: '100%',
-			height: props.height,
+			height: height,
 			backgroundColor: 'transparent',
 			borderRadius: '0',
 		},
@@ -41,31 +42,28 @@ const IssTable = (props) => {
 	});
 
 	const classes = useStyles();
-	
 
 	const data = {
-		header : [
-			'head1','head2','head3','head4','head5','head6'
+		header: ['head1', 'head2', 'head3', 'head4', 'head5', 'head6'],
+		rowdata: [
+			{ row: ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1] },
+			{ row: ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1] },
+			{ row: ['Eclair', 262, 16.0, 24, 6.0, 1] },
+			{ row: ['Cupcake', 305, 3.7, 67, 4.3, 1] },
+			{ row: ['Gingerbread', 356, 16.0, 49, 3.9, 1] },
+			{ row: ['Frozen yoghurt2', 159, 6.0, 24, 4.0, 1] },
+			{ row: ['Ice cream sandwich2', 237, 9.0, 37, 4.3, 1] },
+			{ row: ['Eclair2', 262, 16.0, 24, 6.0, 1] },
+			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
+			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
 		],
-		rowdata : [
-			{ row : ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1]},
-			{ row : ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1]},
-			{ row : ['Eclair', 262, 16.0, 24, 6.0, 1]},
-			{ row : ['Cupcake', 305, 3.7, 67, 4.3, 1]},
-			{ row : ['Gingerbread', 356, 16.0, 49, 3.9, 1]},
-			{ row : ['Frozen yoghurt2', 159, 6.0, 24, 4.0, 1]},
-			{ row : ['Ice cream sandwich2', 237, 9.0, 37, 4.3, 1]},
-			{ row : ['Eclair2', 262, 16.0, 24, 6.0, 1]},
-			{ row : ['Cupcake2', 305, 3.7, 67, 4.3, 1]},
-			{ row : ['Gingerbread2', 356, 16.0, 49, 3.9, 1]},
-		]
-	}
+	};
 
 	return (
 		<>
 			<div className="head">
 				<div className="title">
-					<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE }</h2>
+					<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
 					<div className="ui-tooltip">
 						<i>툴팁</i>
 						<div className="tooltip">tooltip</div>
@@ -76,31 +74,35 @@ const IssTable = (props) => {
 				<Table stickyHeader={true} className={classes.table} aria-label="simple table">
 					<TableHead>
 						<TableRow>
-							{ data.header.map((_header) => (
-								<TableCell key={_header} className={classes.thead}>{_header}</TableCell>
+							{data.header.map((_header) => (
+								<TableCell key={_header} className={classes.thead}>
+									{_header}
+								</TableCell>
 							))}
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{data.rowdata.map((rowItem, _idx) => (
 							<TableRow key={`row_${_idx}`}>
-								{ rowItem.row.map((colItem, _idxitem) => (
-									_idxitem === 0 ? 
-									<>
-									<TableCell component="th" scope="row" className={classes.tbody}>
-										{colItem}
-									</TableCell>
-									</>
-									:
-									<>
-									<TableCell className={classes.tbody}>{colItem}</TableCell>
-									</>
-								))}
+								{rowItem.row.map((colItem, _idxitem) =>
+									_idxitem === 0 ? (
+										<>
+											<TableCell component="th" scope="row" className={classes.tbody}>
+												{colItem}
+											</TableCell>
+										</>
+									) : (
+										<>
+											<TableCell className={classes.tbody}>{colItem}</TableCell>
+										</>
+									),
+								)}
 							</TableRow>
 						))}
 					</TableBody>
 				</Table>
 			</TableContainer>
+			{pagination && <Pagination count={10} showFirstButton showLastButton className="ui-pagination" />}
 		</>
 	);
 };

@@ -40,7 +40,7 @@ const DashboardStatistics = () => {
 					<div className="grid-row-2">
 						<div className="grid-single-row">
 							<div className="box-statisIssue">
-								<DefaultTable height={`calc(100% - 40px)`} />
+								<DefaultTable height={`calc(100% - 44px)`} pagination={true} />
 							</div>
 						</div>
 						<div className="grid-column-3">
