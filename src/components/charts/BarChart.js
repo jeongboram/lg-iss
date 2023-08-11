@@ -1,15 +1,15 @@
 import React, {useRef, useEffect} from 'react';
-import { Chart, Line } from 'react-chartjs-2';
-import {CHART_LINE_GRID_COLOR} from './ChartConsts';
+import { Chart } from 'react-chartjs-2';
+import {CHART_BAR_GRID_COLOR} from './ChartConsts';
 
 export const DEFAULT_LINE_WIDTH = '258px';
 export const DEFAULT_LINE_HEIGHT = '95px';
 
-const LineChart = (props) => {
+const BarChart = (props) => {
 	const { width, height, data, options, id } = props;
 	
 	// const lineChartRef = useRef<ChartJS<"line">>(null);
-	const lineChartRef = useRef(null);
+	const barChartRef = useRef(null);
 
 	const options_base = {
 		maintainAspectRatio : false,
@@ -20,6 +20,7 @@ const LineChart = (props) => {
 			title: {
 				display: false,
 			},
+			...options.plugins
 		},
 		scales: {
 			y: {
@@ -30,17 +31,30 @@ const LineChart = (props) => {
 					display: false,
 				},
 				grid: {
-					color : CHART_LINE_GRID_COLOR.GRAY_AXES
-					
+					color : CHART_BAR_GRID_COLOR.GRAY_AXES,
+					lineWidth: 1,
+					circular: true,
 				},
 				...options.scales?.y
 			},
 			x: {
+				/*
+				border: {
+					display: false,
+				},
+				grid: {
+					color : CHART_BAR_GRID_COLOR.WHITE,
+					lineWidth: 1,
+				},
+				*/
 				...options.scales?.x
 			}
 			
 		},
+		
 	};
+
+	
 
 	//text color : #C9C9C9
 	//line color : #FFFFFF
@@ -50,17 +64,19 @@ const LineChart = (props) => {
 	};
 
 	useEffect(() => {
-		const chart = lineChartRef.current;
+		const chart = barChartRef.current;
 		if (chart) {
-			console.log('####LineChart=>', id);
+			console.log('####BarChart=>', id);
 			console.log('CanvasRenderingContext2D', chart.ctx);
       		console.log('HTMLCanvasElement', chart.canvas);
+
+			console.log('###BarChart:', options_base);
 		}
 
 		return (() => {
-			const chart = lineChartRef.current;
+			const chart = barChartRef.current;
 			if (chart) {
-				console.log('####LineChart destroy=>', id);
+				console.log('####BarChart destroy=>', id);
 				chart.destroy();
 			}
 		})
@@ -69,10 +85,9 @@ const LineChart = (props) => {
 	
 	return (
 		<>
-				{/* <Line ref={lineChartRef} options={options_base} data={default_data}  /> */}
-				<Chart ref={lineChartRef} type="line" options={options_base} data={default_data} style={{width : width||DEFAULT_LINE_WIDTH, height : height||DEFAULT_LINE_HEIGHT}}/>
+			<Chart ref={barChartRef} type='bar' options={options_base} data={default_data} style={{width : width||DEFAULT_LINE_WIDTH, height : height||DEFAULT_LINE_HEIGHT}}/>
 		</>
 	);
 };
 
-export default LineChart;
+export default BarChart;

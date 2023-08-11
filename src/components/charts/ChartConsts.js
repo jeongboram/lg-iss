@@ -6,3 +6,19 @@ export const CHART_COLORS = {
 	ORANGE: 'rgba(246, 192, 101, 1)',
 	GRAY: 'rgba(255, 255, 255, 0.5)',
 };
+
+
+export const CHART_LINE_GRID_COLOR = {
+	WHITE : '#FFFFFF',
+	GRAY_AXES : '#55565A',
+}
+
+export const CHART_BAR_COLOR = {
+	BLUE : '#4C84E0',
+	PINK : '#E992E3',
+}
+
+export const CHART_BAR_GRID_COLOR = {
+	WHITE : '#FFFFFF',
+	GRAY_AXES : '#55565A',
+}

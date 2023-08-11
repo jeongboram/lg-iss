@@ -1,9 +1,6 @@
 import React, { useState} from 'react';
-import { Chart as ChartJS, ArcElement } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
 import { CHART_COLORS } from './ChartConsts';
-
-ChartJS.register(ArcElement);
 
 export const DEFAULT_DOUGHNUT_WIDTH = '130px';
 export const DEFAULT_DOUGHNUT_HEIGHT = '130px';

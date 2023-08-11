@@ -11,6 +11,8 @@ import Header from './components/layout/Header';
 import DashboardStatistics from './pages/dashboard-statistics';
 import './styles/font.css';
 import './styles/ui.scss';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement,  } from 'chart.js';
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, );
 
 function App() {
 	return (

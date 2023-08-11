@@ -96,13 +96,13 @@ const IssTable = (props) => {
 								{rowItem.row.map((colItem, _idxitem) =>
 									_idxitem === 0 ? (
 										<>
-											<TableCell component="th" scope="row" className={classes.tbody}>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} component="th" scope="row" className={classes.tbody}>
 												{colItem}
 											</TableCell>
 										</>
 									) : (
 										<>
-											<TableCell className={classes.tbody}>{colItem}</TableCell>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>{colItem}</TableCell>
 										</>
 									),
 								)}

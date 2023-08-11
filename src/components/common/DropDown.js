@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 export const DEFAULT_TITLE = 'selected';
 
@@ -33,9 +33,22 @@ function DropDown(props) {
 		[checkedList],
 	);
 
+	const onBlurEventHandler = (e) => {
+		setOpen(false)
+	}
+
+	useEffect(() => {
+		// window.addEventListener('blur', onBlurEventHandler);
+
+		return (() => {
+			setOpen(false)
+			// window.removeEventListener('blur', onBlurEventHandler);
+		})
+	}, []);
+
 	return (
 		<>
-			<div className="ui-dropdown-type01">
+			<div className="ui-dropdown-type01" >
 				<div className="label" onClick={() => setOpen(!open)}>
 					{checkedList.length} {title || DEFAULT_TITLE}
 				</div>

@@ -4,66 +4,8 @@ import DefaultButton from '../components/common/DefaultButton';
 import DoughnutChart from '../components/charts/DoughnutChart';
 import IssTable from '../components/common/IssTable';
 import DropDown from '../components/common/DropDown';
-import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
-// import { Doughnut } from 'react-chartjs-2';
 import DefaultTable from '../components/common/DefaultTable';
 import DoughnutLegend from '../components/charts/DoughnutLegend';
-
-ChartJS.register(ArcElement, Tooltip);
-
-// export const data = {
-// 	labels: ['LG Channels App Issues', 'Image Issues', 'Channel Map Issues', 'Schedule Issues', 'Playback Issues'],
-// 	datasets: [
-// 		{
-// 			label: 'AIC(US)',
-// 			data: [12, 19, 3, 5, 2, 3],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'EIC(EU)',
-// 			data: [0],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(BR)',
-// 			data: [10, 5],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'EIC(JA)',
-// 			data: [10, 20],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(AJ)',
-// 			data: [20, 5],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 		{
-// 			label: 'KIC(KR)',
-// 			data: [10],
-// 			backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-// 			borderWidth: 0,
-// 			borderRadius: 2,
-// 			cutout: '70%',
-// 		},
-// 	],
-// };
 
 const DashboardService = () => {
 	const [region, setRegion] = useState([]);
