@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
-// import DoughnutChart from '../components/charts/DoughnutChart';
+import DoughnutChart from '../components/charts/DoughnutChart';
 import DropDown from '../components/common/DropDown';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip } from 'chart.js';
+// import { Doughnut } from 'react-chartjs-2';
 import DefaultTable from '../components/common/DefaultTable';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip);
 
 export const data = {
 	labels: ['LG Channels App Issues', 'Image Issues', 'Channel Map Issues', 'Schedule Issues', 'Playback Issues'],
@@ -100,9 +100,10 @@ const Dashboard = () => {
 									</div>
 								</div>
 								<div className="ui-chart-container">
-									<div style={{ width: '100%', height: '100%' }}>
-										<Doughnut data={data} />
-									</div>
+									{/* <div style={{ width: '100%', height: '100%' }}> */}
+										{/* <Doughnut data={data} /> */}
+										<DoughnutChart width="300px;" height="300px" data=""/>
+									{/* </div> */}
 								</div>
 							</div>
 							<div className="grid-column-2">
