@@ -5,26 +5,12 @@ import { Doughnut } from 'react-chartjs-2';
 
 ChartJS.register(ArcElement);
 
-export const DEFAULT_DOUGHNUT_WIDTH = "300px";
-export const DEFAULT_DOUGHNUT_HEIGHT = "300px";
+export const DEFAULT_DOUGHNUT_WIDTH = '130px';
+export const DEFAULT_DOUGHNUT_HEIGHT = '130px';
 
 const DoughnutChart = (props) => {
+	const { width, height, className } = props;
 
-	// useEffect(() => {
-	// 	window.addEventListener('beforeprint', handleMore);
-	// 	window.addEventListener('afterprint', handleMore);
-	// 	return (() => {
-	// 		window.removeEventListener('beforeprint', handleMore);
-	// 		window.removeEventListener('afterprint', handleMore);
-	// 	})
-	// }, []);
-
-	// const beforePrintHandler = () => {
-
-	// }
-
-	const { width, height } = props;
-	
 	// const data = {
 	// 	labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
 	// 	datasets: [
@@ -58,34 +44,33 @@ const DoughnutChart = (props) => {
 	// 				}
 	// 			}
 	// 		},
-			
+
 	// 	],
-		
+
 	// };
 
 	const data = {
-		labels: ['LG Channels App Issues', 'Image Issues', 'Channel Map Issues', 'Schedule Issues', 'Playback Issues'],
 		datasets: [
 			{
 				label: 'AIC(US)',
 				data: [12, 19, 3, 5, 2, 3],
 				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
-				borderWidth: 1,
-				borderRadius: 2,
+				borderWidth: 0,
+				borderRadius: 0,
 				cutout: '80%',
-			}
+			},
 		],
 	};
 
 	return (
-        <>
-        <div style={{width: width||DEFAULT_DOUGHNUT_WIDTH, height: height||DEFAULT_DOUGHNUT_HEIGHT}}>
-            <Doughnut data={data} />
-			<div>AIC(US)</div>
-			<div>2,107</div>
-        </div>
-        </>
-    );
+		<>
+			<div style={{ width: width || DEFAULT_DOUGHNUT_WIDTH, height: height || DEFAULT_DOUGHNUT_HEIGHT }} className={`chart-type-donut ${className}`}>
+				<Doughnut data={data} />
+				<div className="label">AIC(US)</div>
+				<div className="num">2,107</div>
+			</div>
+		</>
+	);
 };
 
 export default DoughnutChart;

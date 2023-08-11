@@ -656,6 +656,51 @@ body,
 		background-position: center bottom;
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+		position: relative;
+		.chart-type-donut {
+			position: absolute;
+			z-index: 5;
+		}
+		.donut-chart-01 {
+			top: 137px;
+			left: 114px;
+		}
+		.donut-chart-02 {
+			top: 134px;
+			left: 353px;
+		}
+		.donut-chart-03 {
+			top: 374px;
+			left: 266px;
+		}
+		.donut-chart-04 {
+			top: 355px;
+			left: 466px;
+		}
+		.donut-chart-05 {
+			top: 307px;
+			left: 662px;
+		}
+		.donut-chart-06 {
+			top: 204px;
+			left: 830px;
+		}
+		.label,
+		.num {
+			position: absolute;
+			color: #fff;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		.label {
+			top: 40px;
+			font-size: 14px;
+		}
+		.num {
+			top: 60px;
+			font-size: 32px;
+			font-weight: 700;
+		}
 	}
 }
 
