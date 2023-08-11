@@ -1,8 +1,8 @@
 export const CHART_COLORS = {
-        RED : 'rgba(255, 99, 132, 0.8)',
-        BULE : 'rgba(54, 162, 235, 0.8)',
-        YELLOW : 'rgba(255, 206, 86, 0.8)',
-        GREEN : 'rgba(75, 192, 192, 0.8)',
-        PURPLE : 'rgba(153, 102, 255, 0.8)',
-        ORANGE : 'rgba(255, 159, 64, 0.8)'
-}
+	PURPLE: 'rgba(157, 141, 247, 1)',
+	PINK: 'rgba(233, 146, 227, 1)',
+	MINT: 'rgba(133, 221, 219, 1)',
+	BLUE: 'rgba(76, 132, 224, 1)',
+	ORANGE: 'rgba(246, 192, 101, 1)',
+	GRAY: 'rgba(255, 255, 255, 0.5)',
+};

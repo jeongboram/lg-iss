@@ -1,6 +1,7 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { CHART_COLORS } from './ChartConsts';
 // import {CHART_COLORS} from './ChartConsts';
 
 ChartJS.register(ArcElement);
@@ -54,7 +55,7 @@ const DoughnutChart = (props) => {
 			{
 				label: 'AIC(US)',
 				data: [12, 19, 3, 5, 2, 3],
-				backgroundColor: ['rgba(157, 141, 247, 1)', 'rgba(233, 146, 227, 1)', 'rgba(133, 221, 219, 1)', 'rgba(76, 132, 224, 1)', 'rgba(246, 192, 101, 1)'],
+				backgroundColor: [CHART_COLORS.PURPLE, CHART_COLORS.PINK, CHART_COLORS.MINT, CHART_COLORS.BLUE, CHART_COLORS.ORANGE],
 				borderWidth: 0,
 				borderRadius: 0,
 				cutout: '80%',
