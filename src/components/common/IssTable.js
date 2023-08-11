@@ -38,6 +38,15 @@ const IssTable = (props) => {
 			borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
 			padding: '8px 4px',
 		},
+		color: {
+			color: '#FFFFFF'
+		},
+		leftIconButton: {
+			color: '#B8B8B8'
+		},
+		rightIconButton: {
+			color: '#B8B8B8'
+		}
 	});
 
 	const classes = useStyles();

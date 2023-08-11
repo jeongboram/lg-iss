@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ServiceTab from '../contents/ServiceTab';
 import ContentsTab from '../contents/ContentsTab';
 import StatisTab from '../contents/StatisTab';
@@ -42,8 +42,9 @@ import { useNavigate } from 'react-router';
 // 	],
 // };
 
-function SideBar() {
-	const [currentTab, clickTab] = useState(0);
+function SideBar(props) {
+	const DEFAULT_TAB_INDEX = 0;
+	const [currentTab, clickTab] = useState(props.currentTab);
 
 	const navigate = useNavigate();
 
@@ -53,9 +54,13 @@ function SideBar() {
 		{ name: 'Statistics', link: '/dashboard-statistics' },
 	];
 
+	useEffect(() => {
+		console.log('####change currentTab=>', currentTab);
+	}, [currentTab])
+
 	const onSelectMenu = (index, link) => {
 		navigate(link);
-		clickTab(index);
+		//clickTab(index);
 	};
 
 	const onSubmit = (e) => {

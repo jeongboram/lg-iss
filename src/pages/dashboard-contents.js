@@ -25,7 +25,7 @@ const DashboardContents = () => {
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar />
+				<SideBar currentTab={1}/>
 				<div className="contents-section">
 					<div className="grid-vertical-two">
 						<div className="grid-left">

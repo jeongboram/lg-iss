@@ -28,7 +28,7 @@ function StatisTab() {
 					Status of issues by time zone <span>(Based on UTC)</span>
 				</h3>
 				<div className="chart-wrap">
-					<LineChart />
+					<LineChart/>
 				</div>
 			</div>
 		</div>

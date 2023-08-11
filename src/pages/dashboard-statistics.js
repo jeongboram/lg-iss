@@ -3,6 +3,7 @@ import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
 import DropDown from '../components/common/DropDown';
 import DefaultTable from '../components/common/DefaultTable';
+import LineChart from '../components/charts/LineChart';
 
 const DashboardStatistics = () => {
 	const [region, setRegion] = useState([]);
@@ -25,7 +26,7 @@ const DashboardStatistics = () => {
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar />
+				<SideBar currentTab={2}/>
 				<div className="contents-section">
 					<div className="head">
 						<div className="title">
@@ -51,7 +52,9 @@ const DashboardStatistics = () => {
 											<h2>Value</h2>
 										</div>
 									</div>
-									<div className="ui-chart-container">chart</div>
+									<div className="ui-chart-container">
+										<LineChart width="300px" height="300px"/>
+									</div>
 								</div>
 							</div>
 							<div className="grid-center">

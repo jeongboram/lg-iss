@@ -13,6 +13,7 @@ const LineChart = (props) => {
 
 	const options = {
 		responsive: false,
+		maintainAspectRatio: false,
 		plugins: {
 			legend: {
 				position: 'top',
@@ -51,7 +52,9 @@ const LineChart = (props) => {
 	};
 
 	return (
-		<Line options={options} data={data} width={width || DEFAULT_LINE_WIDTH} height={height || DEFAULT_LINE_HEIGHT} />
+		<>
+			<Line options={options} data={data} width={width||DEFAULT_LINE_WIDTH} height={height||DEFAULT_LINE_HEIGHT} />
+		</>
 	);
 };
 

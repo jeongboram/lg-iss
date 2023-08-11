@@ -86,7 +86,7 @@ const DashboardService = () => {
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar />
+				<SideBar currentTab={0}/>
 				<div className="contents-section">
 					<div className="grid-vertical-two">
 						<div className="grid-left">
