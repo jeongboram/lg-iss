@@ -34,7 +34,12 @@ const DashboardStatistics = () => {
 					label: 'This week',
 					data: [-5, -2, -4, -3, 2, 4, 5, 6, 7, 8, 9, 10, 11,  15,10],
 					fill: false,
+					pointRadius: 3,
 					borderColor: '#85DDDB',
+					//point style
+					pointBorderColor: '#FFFFFF',
+					pointBackgroundColor: '#85DDDB',
+					pointBorderWidth: 2,
 					order : 2
 				},
 				{
@@ -71,6 +76,10 @@ const DashboardStatistics = () => {
 					data: [-5, -2, -4, -3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 15,10],
 					fill: false,
 					borderColor: '#85DDDB',
+					//point style
+					pointBorderColor: '#FFFFFF',
+					pointBackgroundColor: '#85DDDB',
+					pointBorderWidth: 2,
 					order : 2
 				},
 			],

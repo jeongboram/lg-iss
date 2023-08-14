@@ -9,10 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
-export const ISSTABLE_DEFAULT_TITLE = 'title';
-
 const IssTable = (props) => {
-	const { height, tableTitle, pagination } = props;
+	const { height, tableTitle, pagination, data } = props;
 
 	const useStyles = makeStyles({
 		tableWrapper: {
@@ -52,32 +50,16 @@ const IssTable = (props) => {
 
 	const classes = useStyles();
 
-	const data = {
-		header: ['head1', 'head2', 'head3', 'head4', 'head5', 'head6'],
-		rowdata: [
-			{ row: ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1] },
-			{ row: ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1] },
-			{ row: ['Eclair', 262, 16.0, 24, 6.0, 1] },
-			{ row: ['Cupcake', 305, 3.7, 67, 4.3, 1] },
-			{ row: ['Gingerbread', 356, 16.0, 49, 3.9, 1] },
-			{ row: ['Frozen yoghurt2', 159, 6.0, 24, 4.0, 1] },
-			{ row: ['Ice cream sandwich2', 237, 9.0, 37, 4.3, 1] },
-			{ row: ['Eclair2', 262, 16.0, 24, 6.0, 1] },
-			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
-			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
-		],
-	};
-
 	return (
 		<>
 			{ 
-			tableTitle && 
+			data.existTooltip && 
 				<div className="head">
 					<div className="title">
-						<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
+						<h2>{data.title}</h2>
 						<div className="ui-tooltip">
 							<i>툴팁</i>
-							<div className="tooltip">tooltip</div>
+							<div className="tooltip">{data.tooltip}</div>
 						</div>
 					</div>
 				</div>
