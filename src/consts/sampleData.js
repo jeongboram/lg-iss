@@ -1,4 +1,5 @@
 import { CHART_COLORS } from '../components/charts/ChartConsts';
+import { ROWHEADER_TYPE } from '../consts/IssTableConsts';
 
 export const dashboard_service_data = {
     data_aic_us : {
@@ -93,11 +94,9 @@ export const dashboard_service_tabledata = {
     service_data_issue : {
         title : 'LG Channles App Issues',
         existTooltip : true,
-        tootle : {
-            title : 'LG Channles App Issues',
-            message : 'LG Channles App Issues tooltip message..!!'
-        },
+        tooltip : 'LG Channles App Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'Isssule Contents'],
+        rowStyle: [ ROWHEADER_TYPE.FIRST, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.LONG],
 		rowdata: [
 			{ row: ['23-07-07', 1,11,'App Service not available App Service not available App Service not available App Service not available'] },
 			{ row: ['23-07-07', 5,11, 'Schedule Error Schedule Error Schedule Error Schedule Error Schedule Error Schedule Error '] },
@@ -112,11 +111,9 @@ export const dashboard_service_tabledata = {
     palyback_issue : {
         title : 'Playback Issuess',
         existTooltip : true,
-        tootle : {
-            title : 'Playback Issues',
-            message : 'Playback Issues tooltip message..!!'
-        },
+        tooltip : 'Playback Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'Isssule Contents'],
+        rowStyle: [ ROWHEADER_TYPE.FIRST, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.LONG],
 		rowdata: [
 			{ row: ['23-07-07', 1,11,'App Service not available App Service not available App Service not available App Service not available'] },
 			{ row: ['23-07-07', 5,11, 'Schedule Error Schedule Error Schedule Error Schedule Error Schedule Error Schedule Error '] },
@@ -130,11 +127,9 @@ export const dashboard_service_tabledata = {
     sample_data : {
         title : 'Sample Title',
         existTooltip : true,
-        tootle : {
-            title : 'Sample',
-            message : 'Sample tooltip message..!!'
-        },
+        tooltip : 'Sample tooltip message..!!',
 		header: ['head1', 'head2', 'head3', 'head4', 'head5', 'head6'],
+        rowStyle: [ ROWHEADER_TYPE.FIRST, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL],
 		rowdata: [
 			{ row: ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1] },
 			{ row: ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1] },
@@ -150,11 +145,9 @@ export const dashboard_service_tabledata = {
 	},
     sample_notitle_data : {
         existTooltip : false,
-        tootle : {
-            title : 'Sample',
-            message : 'Sample tooltip message..!!'
-        },
+        tooltip : '',
 		header: ['head1', 'head2', 'head3', 'head4', 'head5', 'head6'],
+        rowStyle: [ ROWHEADER_TYPE.FIRST, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL, ROWHEADER_TYPE.NORMAL],
 		rowdata: [
 			{ row: ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1] },
 			{ row: ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1] },

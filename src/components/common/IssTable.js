@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Pagination from '@material-ui/lab/Pagination';
+import { ROWHEADER_TYPE } from '../../consts/IssTableConsts'
 
 const IssTable = (props) => {
 	const { height, tableTitle, pagination, data } = props;
@@ -37,15 +38,24 @@ const IssTable = (props) => {
 						{data.rowdata.map((rowItem, _idx) => (
 							<TableRow key={`row_${_idx}`}>
 								{rowItem.row.map((colItem, _idxitem) =>
-									_idxitem === 0 ? (
+									(data.rowStyle === undefined ? ROWHEADER_TYPE.NORMAL : data.rowStyle[_idxitem]) === ROWHEADER_TYPE.FIRST ? (
 										<>
 											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} component="th" scope="row">
 												{colItem}
 											</TableCell>
 										</>
-									) : (
+									) : (										
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`}>{colItem}</TableCell>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`}>
+												{
+													(data.rowStyle === undefined ? ROWHEADER_TYPE.NORMAL : data.rowStyle[_idxitem]) === ROWHEADER_TYPE.LONG ?
+														<>
+														<div className="ellipsis">{colItem}</div>
+														</>
+														:
+														`${colItem}`
+												}
+											</TableCell>
 										</>
 									),
 								)}
