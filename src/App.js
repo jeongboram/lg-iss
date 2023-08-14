@@ -11,8 +11,9 @@ import Header from './components/layout/Header';
 import DashboardStatistics from './pages/dashboard-statistics';
 import './styles/font.css';
 import './styles/ui.scss';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement,  } from 'chart.js';
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement, );
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement } from 'chart.js';
+import DashboardBeacon from './pages/dashboard-beacon';
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, ArcElement, BarElement);
 
 function App() {
 	return (
@@ -24,7 +25,7 @@ function App() {
 						<Route exact path="/" element={<DashboardService />} />
 						<Route path="/dashboard-contents" element={<DashboardContents />} />
 						<Route path="/dashboard-statistics" element={<DashboardStatistics />} />
-						<Route path="/service" element={<Service />} />
+						<Route path="/dashboard-beacon" element={<DashboardBeacon />} />
 						<Route path="/service" element={<Service />} />
 						<Route path="/contents" element={<Contents />} />
 						<Route path="/statistics" element={<Statistics />} />

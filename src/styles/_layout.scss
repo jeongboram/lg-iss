@@ -410,6 +410,40 @@ body,
 						font-size: 28px;
 					}
 				}
+				.tab-titles {
+					display: flex;
+					align-items: center;
+					> div {
+						display: flex;
+						align-items: center;
+						position: relative;
+						@include transition(opacity, 0.15s);
+						margin-left: 8px;
+						&:before {
+							display: block;
+							content: '/';
+							font-size: 28px;
+							line-height: 37.8px;
+							color: #6d6d6d;
+							font-weight: 600;
+						}
+						h1 {
+							padding-left: 8px;
+							color: #6d6d6d;
+						}
+						&:first-child {
+							margin-left: 0;
+							&:before {
+								display: none;
+							}
+						}
+						&.on {
+							h1 {
+								color: #fff;
+							}
+						}
+					}
+				}
 				.ui-components-box {
 					display: flex;
 					align-items: center;
@@ -1043,4 +1077,23 @@ body,
 }
 .box-country {
 	width: 328px;
+}
+.box-docCount,
+.box-normalRange {
+	width: 746px;
+	@extend .box-container-style-inside;
+	padding: 20px;
+	.head {
+		.title {
+			h2 {
+				font-size: 18px;
+				color: #fff;
+				line-height: 24.3px;
+				font-weight: 600;
+			}
+		}
+	}
+	.ui-chart-container {
+		height: 342px;
+	}
 }

@@ -8,7 +8,7 @@ import BarChart from '../components/charts/BarChart';
 import { CHART_COLORS, CHART_BAR_COLOR, CHART_BAR_GRID_COLOR } from '../components/charts/ChartConsts';
 import { Link } from 'react-router-dom';
 
-const DashboardStatistics = () => {
+const DashboardBeacon = () => {
 	const [region, setRegion] = useState([]);
 	const [countries, setCountries] = useState([]);
 
@@ -146,12 +146,12 @@ const DashboardStatistics = () => {
 				<div className="contents-section">
 					<div className="head">
 						<div className="title tab-titles">
-							<div className="on">
+							<div>
 								<h1>
 									<Link to="/dashboard-statistics">Statistics Issues</Link>
 								</h1>
 							</div>
-							<div>
+							<div className="on">
 								<h1>
 									<Link to="/dashboard-beacon">Beacon Data Issues</Link>
 								</h1>
@@ -173,12 +173,12 @@ const DashboardStatistics = () => {
 								<DefaultTable height={`calc(100% - 44px)`} pagination={true} />
 							</div>
 						</div>
-						<div className="grid-column-3">
+						<div className="grid-column-2">
 							<div className="grid-left">
-								<div className="box-value">
+								<div className="box-docCount">
 									<div className="head">
 										<div className="title">
-											<h2>Value</h2>
+											<h2>Document Count</h2>
 										</div>
 									</div>
 									<div className="ui-chart-container">
@@ -187,26 +187,14 @@ const DashboardStatistics = () => {
 								</div>
 							</div>
 							<div className="grid-center">
-								<div className="box-rateChange">
+								<div className="box-normalRange">
 									<div className="head">
 										<div className="title">
-											<h2>Changes in the rate of increase and decrease</h2>
+											<h2>Normal Range</h2>
 										</div>
 									</div>
 									<div className="ui-chart-container">
 										<LineChart id={'changes_chart'} data={changes_graph.data} options={changes_graph.options} width={'100%'} height={'100%'} />
-									</div>
-								</div>
-							</div>
-							<div className="grid-right">
-								<div className="box-country">
-									<div className="head">
-										<div className="title">
-											<h2>Country</h2>
-										</div>
-									</div>
-									<div className="ui-chart-container">
-										<BarChart id={'barChart'} data={barchart_graph.data} options={barchart_graph.options} width={'100%'} height={'100%'} />
 									</div>
 								</div>
 							</div>
@@ -217,4 +205,4 @@ const DashboardStatistics = () => {
 		</>
 	);
 };
-export default DashboardStatistics;
+export default DashboardBeacon;
