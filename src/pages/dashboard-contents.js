@@ -25,7 +25,7 @@ const DashboardContents = () => {
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar currentTab={1}/>
+				<SideBar currentTab={1} />
 				<div className="contents-section">
 					<div className="grid-vertical-two">
 						<div className="grid-left">
@@ -37,10 +37,212 @@ const DashboardContents = () => {
 									<div className="ui-components-box">
 										<DropDown item={region} title="Region" />
 										<DropDown item={countries} title="Countries" />
-										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} pagination={false} />
+										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
 								</div>
-								<div className="ui-chart-container">data flow</div>
+								<div className="dafaflow-container">
+									<div className="box">
+										<div className="head">
+											<h2>CP</h2>
+											<span className="bg-gradient bg-cp on"></span>
+											{/* issue 발생시 bg-gradient 에 클래스 on 추가 */}
+										</div>
+										<div className="cp-contents">
+											<ul>
+												<li className="on">
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">02</span>
+												</li>
+												<li className="on">
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
+													<span className="num">99</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+												<li>
+													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
+													<span className="num">00</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div className="bg-processing"></div>
+									<div className="box">
+										<div className="head">
+											<h2>CMP</h2>
+											<span className="bg-gradient bg-cmp on"></span>
+										</div>
+										<div className="cmp-contents">
+											<div className="summary-box">
+												<h3>
+													Channel
+													<br />
+													Organization
+												</h3>
+												<strong>00</strong>
+											</div>
+											<div className="summary-box on">
+												<h3>
+													APP
+													<br />
+													Organization
+												</h3>
+												<strong>42</strong>
+											</div>
+											<div className="summary-box">
+												<h3>
+													Data
+													<br />
+													Deployment
+												</h3>
+												<strong>00</strong>
+											</div>
+										</div>
+									</div>
+									<div className="bg-processing"></div>
+									<div className="box">
+										<div className="head">
+											<h2>Device</h2>
+											<span className="bg-gradient bg-device on"></span>
+										</div>
+										<div className="device-contents">
+											<div className="summary-box">
+												<h3>
+													Live
+													<br />
+													Channels
+												</h3>
+												<strong>00</strong>
+											</div>
+											<div className="summary-box on">
+												<h3>
+													LG Channels
+													<br />
+													App
+												</h3>
+												<strong>204</strong>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div className="grid-column-2">
 								<div className="grid-left">
