@@ -87,7 +87,7 @@ const IssTable = (props) => {
 										</>
 									) : (
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody} >
 												{colItem}
 											</TableCell>
 										</>

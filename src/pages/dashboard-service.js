@@ -94,10 +94,10 @@ const DashboardService = () => {
 									onChange={tabChangeHandler}
 								>
 									<IssTab isActive={currentTab === 0}>
-										<IssTable height={`calc(100% - 40px`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+										<IssTable height={`calc(100%`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
 									</IssTab>    
 									<IssTab isActive={currentTab === 1}>
-										<IssTable height={`calc(100% - 40px`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+										<IssTable height={`calc(100%`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
 									</IssTab>
 								</IssTabs>
 							</div>

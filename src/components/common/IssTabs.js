@@ -26,11 +26,7 @@ const IssTabs = (props) => {
                     </div>
                 ))}
             </div>
-            <div className="ui-tab-contents">
-                <div className="tab-box">
-                    {children}
-                </div>
-            </div>
+            {children}
         </div>
         </>
     )

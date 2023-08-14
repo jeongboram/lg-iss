@@ -5,11 +5,14 @@ const IssTab = (props) => {
 
     return (
         <>
-        <div className="ui-tab-contents">
-            <div className="tab-box">
-                { isActive && children }
+        {
+            !isActive &&
+            <div className="ui-tab-contents">
+                <div className="tab-box">
+                {children}
+                </div>
             </div>
-        </div>
+        }
         </>
     )
 }
