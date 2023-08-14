@@ -40,14 +40,14 @@ const IssTable = (props) => {
 			padding: '8px 4px',
 		},
 		color: {
-			color: '#FFFFFF'
+			color: '#FFFFFF',
 		},
 		leftIconButton: {
-			color: '#B8B8B8'
+			color: '#B8B8B8',
 		},
 		rightIconButton: {
-			color: '#B8B8B8'
-		}
+			color: '#B8B8B8',
+		},
 	});
 
 	const classes = useStyles();
@@ -68,17 +68,21 @@ const IssTable = (props) => {
 		],
 	};
 
+	console.log('tableTitle', tableTitle);
+
 	return (
 		<>
-			<div className="head">
-				<div className="title">
-					<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
-					<div className="ui-tooltip">
-						<i>툴팁</i>
-						<div className="tooltip">tooltip</div>
+			{tableTitle !== undefined && (
+				<div className="head">
+					<div className="title">
+						<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
+						<div className="ui-tooltip">
+							<i>툴팁</i>
+							<div className="tooltip">tooltip</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 			<TableContainer component={Paper} className={classes.tableWrapper}>
 				<Table stickyHeader={true} className={classes.table} aria-label="simple table">
 					<TableHead>
@@ -102,7 +106,9 @@ const IssTable = (props) => {
 										</>
 									) : (
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>{colItem}</TableCell>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>
+												{colItem}
+											</TableCell>
 										</>
 									),
 								)}

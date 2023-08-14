@@ -10,7 +10,13 @@ import DoughnutLegend from '../components/charts/DoughnutLegend';
 const DashboardService = () => {
 	const [region, setRegion] = useState([]);
 	const [countries, setCountries] = useState([]);
+	const [currentTab, clickTab] = useState(0);
 
+	const tabMenus = [{ name: 'Schedule Issues' }, { name: 'Service Data Issues' }];
+
+	const onSelectMenu = (index) => {
+		clickTab(index);
+	};
 	useEffect(() => {
 		fetch('/region')
 			.then((response) => response.json())
@@ -28,7 +34,7 @@ const DashboardService = () => {
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar currentTab={0}/>
+				<SideBar currentTab={0} />
 				<div className="contents-section">
 					<div className="grid-vertical-two">
 						<div className="grid-left">
@@ -74,7 +80,25 @@ const DashboardService = () => {
 								<DefaultTable height={`calc(100% - 40px)`} tableTitle="Image Issues" pagination={false} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<IssTable height={`calc(100% - 40px)`} tableTitle="Service Data Issues" pagination={false} />
+								<div className="ui-tab-type02">
+									<div className="ui-tab-menu">
+										{tabMenus.map((el, index) => (
+											<div key={index} className={index === currentTab ? 'on' : ''} onClick={() => onSelectMenu(index)}>
+												<h2>{el.name}</h2>
+												<div className="ui-tooltip">
+													<i>툴팁</i>
+													<div className="tooltip">Contents Issue Contents Issue Contents Issue texe text Contents Issue</div>
+												</div>
+											</div>
+										))}
+									</div>
+									<div className="ui-tab-contents">
+										<div className="tab-box">
+											{currentTab === 0 && <IssTable height={`100%`} pagination={false} />}
+											{currentTab === 1 && <IssTable height={`100%`} pagination={false} />}
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
