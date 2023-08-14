@@ -6,54 +6,14 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 
 const IssTable = (props) => {
 	const { height, tableTitle, pagination, data } = props;
 
-	const useStyles = makeStyles({
-		tableWrapper: {
-			width: '100%',
-			height: height,
-			backgroundColor: 'transparent',
-			borderRadius: '0',
-		},
-		table: {
-			width: '100%',
-			backgroundColor: '#1c1c1c',
-		},
-		thead: {
-			backgroundColor: '#1c1c1c',
-			color: '#B8B8B8',
-			fontSize: '11px',
-			borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-			padding: '8px 4px',
-		},
-		tbody: {
-			backgroundColor: '#1c1c1c',
-			color: '#fff',
-			fontSize: '12px',
-			borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-			padding: '8px 4px',
-		},
-		color: {
-			color: '#FFFFFF',
-		},
-		leftIconButton: {
-			color: '#B8B8B8',
-		},
-		rightIconButton: {
-			color: '#B8B8B8',
-		},
-	});
-
-	const classes = useStyles();
-
 	return (
 		<>
-			{ 
-			data.existTooltip && 
+			{data.existTooltip && (
 				<div className="head">
 					<div className="title">
 						<h2>{data.title}</h2>
@@ -63,15 +23,13 @@ const IssTable = (props) => {
 						</div>
 					</div>
 				</div>
-			}
-			<TableContainer component={Paper} className={classes.tableWrapper}>
-				<Table stickyHeader={true} className={classes.table} aria-label="simple table">
+			)}
+			<TableContainer component={Paper} className="tableWrapper" style={{ height: `${height}` }}>
+				<Table stickyHeader={true} aria-label="simple table">
 					<TableHead>
 						<TableRow>
 							{data.header.map((_header) => (
-								<TableCell key={_header} className={classes.thead}>
-									{_header}
-								</TableCell>
+								<TableCell key={_header}>{_header}</TableCell>
 							))}
 						</TableRow>
 					</TableHead>
@@ -81,15 +39,13 @@ const IssTable = (props) => {
 								{rowItem.row.map((colItem, _idxitem) =>
 									_idxitem === 0 ? (
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} component="th" scope="row" className={classes.tbody}>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} component="th" scope="row">
 												{colItem}
 											</TableCell>
 										</>
 									) : (
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody} >
-												{colItem}
-											</TableCell>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`}>{colItem}</TableCell>
 										</>
 									),
 								)}

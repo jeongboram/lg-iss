@@ -391,6 +391,7 @@ body,
 				gap: 32px;
 				padding: 20px;
 				@extend .box-container-style;
+				background-color: #1c1c1c;
 			}
 			.grid-single-row {
 				width: 100%;
@@ -728,13 +729,34 @@ body,
 .box-appIssues,
 .box-playbackIssues {
 	height: 324px;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 .box-imageIssues {
 	height: 594px;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 
 .box-secheduleIssues {
 	height: 324px;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 
 .box-channel-dataflow {
@@ -965,13 +987,34 @@ body,
 .box-cmpIssues,
 .box-deviceIssues {
 	height: 254px;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 .box-cpIssues {
 	height: 100%;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 .box-statisIssue {
 	width: 100%;
 	height: 404px;
+	.tableWrapper {
+		thead {
+			th {
+				background-color: #1c1c1c;
+			}
+		}
+	}
 }
 .box-value,
 .box-rateChange,

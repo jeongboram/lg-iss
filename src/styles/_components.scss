@@ -220,7 +220,14 @@
 		}
 	}
 }
-
+.textContainer {
+	display: inline-block;
+	max-width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+}
 .ui-tooltip {
 	position: relative;
 	margin-left: 4px;
@@ -373,5 +380,51 @@
 				color: #fff;
 			}
 		}
+	}
+}
+
+.tableWrapper {
+	box-shadow: none;
+	background-color: inherit !important;
+	table {
+		width: 100%;
+		background-color: inherit;
+		border-radius: 0;
+		th,
+		td {
+			vertical-align: middle;
+		}
+		thead {
+			th {
+				background-color: #1c1c1c;
+				color: #b8b8b8;
+				font-size: 11px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+				padding: 8px 4px;
+				text-align: center;
+			}
+		}
+		tbody {
+			th,
+			td {
+				background-color: inherit;
+				color: #fff;
+				font-size: 12px;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+				padding: 8px 4px;
+				text-align: center;
+				@include transition(all, 0.2s);
+			}
+			tr:hover {
+				th,
+				td {
+					background-color: rgba(255, 255, 255, 0.05);
+				}
+			}
+		}
+	}
+	.ellipsis {
+		max-width: 90%;
+		@include lineClamp(1);
 	}
 }
