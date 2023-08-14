@@ -67,9 +67,8 @@ const BarChart = (props) => {
 		const chart = barChartRef.current;
 		if (chart) {
 			console.log('####BarChart=>', id);
-			console.log('CanvasRenderingContext2D', chart.ctx);
-      		console.log('HTMLCanvasElement', chart.canvas);
-
+			// console.log('CanvasRenderingContext2D', chart.ctx);
+			// console.log('HTMLCanvasElement', chart.canvas);
 			console.log('###BarChart:', options_base);
 		}
 

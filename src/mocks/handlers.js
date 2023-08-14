@@ -1,6 +1,8 @@
 import { rest } from 'msw';
 import regionData from './datas/region';
 import countryData from './datas/countries';
+import platformData from './datas/platforms';
+import cpsData from './datas/cps';
 
 //const todos = ['먹기', '자기', '놀기'];
 
@@ -12,6 +14,14 @@ export const handlers = [
 
 	rest.get('/countries', (req, res, ctx) => {
 		return res(ctx.status(200), ctx.json(countryData));
+	}),
+
+	rest.get('/platforms', (req, res, ctx) => {
+		return res(ctx.status(200), ctx.json(platformData));
+	}),
+
+	rest.get('/cps', (req, res, ctx) => {
+		return res(ctx.status(200), ctx.json(cpsData));
 	}),
 
 	// Region Post

@@ -3,6 +3,10 @@ import SideBar from '../components/layout/SideBar';
 import DefaultButton from '../components/common/DefaultButton';
 import DropDown from '../components/common/DropDown';
 import DefaultTable from '../components/common/DefaultTable';
+import { CP_TYPE } from '../consts/IssConsts';
+import ChannelDataFlow from '../components/contents/ChannelDataFlow'
+import IssTable from '../components/common/IssTable';
+import { dashboard_contents_tabledata } from '../consts/sampleData';
 
 const DashboardContents = () => {
 	const [region, setRegion] = useState([]);
@@ -49,138 +53,38 @@ const DashboardContents = () => {
 										</div>
 										<div className="cp-contents">
 											<ul>
-												<li className="on">
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">02</span>
-												</li>
-												<li className="on">
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
-													<span className="num">99</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo_2.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
-												<li>
-													<span className="logo" style={{ backgroundImage: `url(/res/images/sample/cp_logo.png)` }}></span>
-													<span className="num">00</span>
-												</li>
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} isActive={true} data='02' />
+												<ChannelDataFlow imageUrl={CP_TYPE.FUSEMEDIA} isActive={true} data='99' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
 											</ul>
 										</div>
 									</div>
@@ -247,19 +151,19 @@ const DashboardContents = () => {
 							<div className="grid-column-2">
 								<div className="grid-left">
 									<div className="box-cmpIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="CMP Issues" pagination={false} />
+										<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.cmp_issues}/>
 									</div>
 								</div>
 								<div className="grid-right">
 									<div className="box-deviceIssues box-tbl">
-										<DefaultTable height={`calc(100% - 40px)`} tableTitle="Device Issues" pagination={false} />
+										<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.deivce_issues}/>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="grid-right">
 							<div className="box-cpIssues box-tbl">
-								<DefaultTable height={`calc(100% - 40px)`} tableTitle="CP Issues" pagination={false} />
+								<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.cp_issues}/>
 							</div>
 						</div>
 					</div>

@@ -5,6 +5,7 @@ export const CHART_COLORS = {
 	BLUE: 'rgba(76, 132, 224, 1)',
 	ORANGE: 'rgba(246, 192, 101, 1)',
 	GRAY: 'rgba(255, 255, 255, 0.1)',
+	WHITE : 'rgba(255,255,255,1)'
 };
 
 

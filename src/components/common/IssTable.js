@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef }  from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,8 +9,51 @@ import Paper from '@material-ui/core/Paper';
 import Pagination from '@material-ui/lab/Pagination';
 import { ROWHEADER_TYPE } from '../../consts/IssConsts';
 
+export const DEFAULT_HEIGHT = 'calc(100% - 40px)';
+export const DEFAULT_PAGE_HEIGHT = 'calc(100% - 44px)';
+
 const IssTable = (props) => {
-	const { height, tableTitle, pagination, data } = props;
+	const { height, pagination, data } = props;
+	const [page, setPage] = useState(1);
+	const tableRef = useRef(null);
+
+	var customHeight = height;
+
+	if ( !height ) {
+		customHeight = DEFAULT_HEIGHT;
+	}
+
+	if ( !height && pagination ) {
+		customHeight = DEFAULT_PAGE_HEIGHT;
+	}
+
+	/**
+	 * page click event
+	 * 
+	 * @param {*} event 
+	 * @param {*} value page no
+	 */
+	const onChangePageHalder = (event, value) => {
+		console.log("#Page Change Event=>" , value);
+		setPage(value);
+	}
+
+	useEffect(() => {
+		const ptableref = tableRef.current;
+		if (ptableref) {
+			console.log('####IssTable =>', data.title);
+			// console.log('CanvasRenderingContext2D', chart.ctx);
+			// console.log('HTMLCanvasElement', chart.canvas);
+		}
+
+		return (() => {
+			const ptableref = tableRef.current;
+			if (ptableref) {
+				console.log('####IssTable destroy=>', data.title);
+				ptableref.remove();
+			}
+		})
+	}, []);
 
 	return (
 		<>
@@ -25,12 +68,14 @@ const IssTable = (props) => {
 					</div>
 				</div>
 			)}
-			<TableContainer component={Paper} className="tableWrapper" style={{ height: `${height}` }}>
+			<TableContainer ref={tableRef} component={Paper} className="tableWrapper" style={{ height: `${customHeight}` }}>
 				<Table stickyHeader={true} aria-label="simple table">
 					<colgroup>
-						{data.cellWidth.map((width, index) => (
-							<col width={width} key={index}></col>
-						))}
+						{	/* column width */
+							data.cellWidth?.map((width, index) => (
+								<col width={width} key={index}></col>
+							))
+						}
 					</colgroup>
 					<TableHead>
 						<TableRow>
@@ -68,7 +113,9 @@ const IssTable = (props) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			{pagination && <Pagination count={10} showFirstButton showLastButton className="ui-pagination" />}
+			{ pagination && 
+				<Pagination count={20} page={page} showFirstButton showLastButton onChange={onChangePageHalder} className="ui-pagination"/>
+			}
 		</>
 	);
 };

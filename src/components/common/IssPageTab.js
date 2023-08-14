@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-const IssTab = (props) => {
+const IssPageTab = (props) => {
     const { isActive, children } = props;
 
     return (
         <>
         {
             isActive &&
-            <div className="ui-tab-contents">
-                <div className="tab-box">
+            <div className="grid-row-2">
                 {children}
-                </div>
             </div>
         }
         </>
     )
 }
 
-export default IssTab; 
+export default IssPageTab; 

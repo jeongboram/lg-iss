@@ -13,6 +13,8 @@ import IssTab from '../components/common/IssTab';
 const DashboardService = () => {
 	const [region, setRegion] = useState([]);
 	const [countries, setCountries] = useState([]);
+	const [cps, setCps] = useState([]);
+	const [platforms, setPlatforms] = useState([]);
 	const [currentTab, clickTab] = useState(0);
 	
 	useEffect(() => {
@@ -27,6 +29,19 @@ const DashboardService = () => {
 			.then((data) => {
 				setCountries(data);
 			});
+
+		fetch('/platforms')
+			.then((response) => response.json())
+			.then((data) => {
+				setPlatforms(data);
+			});
+
+			fetch('/cps')
+			.then((response) => response.json())
+			.then((data) => {
+				setCps(data);
+			});
+
 	}, []);
 
 
@@ -35,8 +50,8 @@ const DashboardService = () => {
 	//------------------------------------
 	const tabMenus = [
 		{ 
-			name: 'Schedule Issues' 
-			,tooltip: 'Schedule Issues tooltip'
+			name: dashboard_service_tabledata.schedule_issues.title 
+			,tooltip: dashboard_service_tabledata.schedule_issues.tooltip 
 		}, 
 		{ 
 			name: 'Service Data Issues' 
@@ -45,7 +60,7 @@ const DashboardService = () => {
 	];
 
 	const tabChangeHandler = (selectedIdx, _data) => {
-		clickTab(selectedIdx, _data);
+		clickTab(selectedIdx);
 	}
 
 	return (
@@ -63,12 +78,12 @@ const DashboardService = () => {
 									<div className="ui-components-box">
 										<DropDown item={region} title="Region" />
 										<DropDown item={countries} title="Countries" />
+										<DropDown item={platforms} title="Platforms" />
+										<DropDown item={cps} title="CPs" />
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 									</div>
 								</div>
 								<div className="ui-chart-container">
-									{/* <div style={{ width: '100%', height: '100%' }}> */}
-									{/* <Doughnut data={data} /> */}
 									<DoughnutLegend />
 									<DoughnutChart data={dashboard_service_data.data_aic_us} className={'donut-chart-01'} />
 									<DoughnutChart data={dashboard_service_data.data_eic_eu} className={'donut-chart-02'} />
@@ -76,25 +91,24 @@ const DashboardService = () => {
 									<DoughnutChart data={dashboard_service_data.data_eic_ja} className={'donut-chart-04'} />
 									<DoughnutChart data={dashboard_service_data.data_kic_aj} className={'donut-chart-05'} />
 									<DoughnutChart data={dashboard_service_data.data_kic_kr} className={'donut-chart-06'} />
-									{/* </div> */}
 								</div>
 							</div>
 							<div className="grid-column-2">
 								<div className="grid-left">
 									<div className="box-appIssues box-tbl">
-										<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_service_tabledata.service_data_issue} />
+										<IssTable pagination={false} data={dashboard_service_tabledata.lg_channels_app_issues} />
 									</div>
 								</div>
 								<div className="grid-right">
 									<div className="box-playbackIssues box-tbl">
-										<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_service_tabledata.palyback_issue} />
+										<IssTable pagination={false} data={dashboard_service_tabledata.palyback_issue} />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="grid-right">
 							<div className="box-imageIssues box-tbl">
-								<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_service_tabledata.sample_data} />
+								<IssTable pagination={false} data={dashboard_service_tabledata.image_issue} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
 								<IssTabs
@@ -103,10 +117,10 @@ const DashboardService = () => {
 									onChange={tabChangeHandler}
 								>
 									<IssTab isActive={currentTab === 0}>
-										<IssTable height={`calc(100%`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+										<IssTable height={"100%"} pagination={false} data={dashboard_service_tabledata.schedule_issues} />
 									</IssTab>    
 									<IssTab isActive={currentTab === 1}>
-										<IssTable height={`calc(100%`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+										<IssTable height={"100%"} pagination={false} data={dashboard_service_tabledata.service_data_issues} />
 									</IssTab>
 								</IssTabs>
 							</div>

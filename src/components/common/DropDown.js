@@ -5,8 +5,8 @@ export const DEFAULT_TITLE = 'selected';
 function DropDown(props) {
 	const [open, setOpen] = useState(false);
 	const [checkedList, setCheckedLists] = useState([]);
+	const { item, title, onChangeDropDown } = props;
 
-	const { item, title } = props;
 	const onCheckedAll = useCallback(
 		(checked) => {
 			if (checked) {
@@ -33,18 +33,15 @@ function DropDown(props) {
 		[checkedList],
 	);
 
-	const onBlurEventHandler = (e) => {
-		setOpen(false)
-	}
-
 	useEffect(() => {
-		// window.addEventListener('blur', onBlurEventHandler);
-
-		return (() => {
-			setOpen(false)
-			// window.removeEventListener('blur', onBlurEventHandler);
-		})
-	}, []);
+		console.log(`###[DROP][name=${title}]change checkedList=>`, checkedList);
+		console.log(`###[DROP][name=${title}]change checkedList length=>`, checkedList.length);
+		// console.log(`###[DROP][name=${title}]change checkedList=>`, onChangeDropDown);
+		if ( checkedList != null && checkedList.length > 0 && onChangeDropDown) {
+			// console.log('#### push OnChangeDropDown=>', checkedList);
+			onChangeDropDown(checkedList);
+		}
+	}, [checkedList]);
 
 	return (
 		<>

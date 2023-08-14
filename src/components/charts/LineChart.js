@@ -2,8 +2,8 @@ import React, {useRef, useEffect} from 'react';
 import { Chart, Line } from 'react-chartjs-2';
 import {CHART_LINE_GRID_COLOR} from './ChartConsts';
 
-export const DEFAULT_LINE_WIDTH = '258px';
-export const DEFAULT_LINE_HEIGHT = '95px';
+export const DEFAULT_LINE_WIDTH = '100%';
+export const DEFAULT_LINE_HEIGHT = '100%';
 
 const LineChart = (props) => {
 	const { width, height, data, options, id } = props;
@@ -52,9 +52,9 @@ const LineChart = (props) => {
 	useEffect(() => {
 		const chart = lineChartRef.current;
 		if (chart) {
-			console.log('####LineChart=>', id);
-			console.log('CanvasRenderingContext2D', chart.ctx);
-      		console.log('HTMLCanvasElement', chart.canvas);
+			console.log('####LineChart =>', id);
+			// console.log('CanvasRenderingContext2D', chart.ctx);
+			// console.log('HTMLCanvasElement', chart.canvas);
 		}
 
 		return (() => {
@@ -69,8 +69,8 @@ const LineChart = (props) => {
 	
 	return (
 		<>
-				{/* <Line ref={lineChartRef} options={options_base} data={default_data}  /> */}
-				<Chart ref={lineChartRef} type="line" options={options_base} data={default_data} style={{width : width||DEFAULT_LINE_WIDTH, height : height||DEFAULT_LINE_HEIGHT}}/>
+			{/* <Line ref={lineChartRef} options={options_base} data={default_data}  /> */}
+			<Chart ref={lineChartRef} type="line" options={options_base} data={default_data} style={{width : width||DEFAULT_LINE_WIDTH, height : height||DEFAULT_LINE_HEIGHT}}/>
 		</>
 	);
 };
