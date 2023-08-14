@@ -33,7 +33,16 @@ const DashboardService = () => {
 	//------------------------------------
 	//tab 관련 
 	//------------------------------------
-	const tabMenus = [{ name: 'Schedule Issues' }, { name: 'Service Data Issues' }];
+	const tabMenus = [
+		{ 
+			name: 'Schedule Issues' 
+			,tooltip: 'Schedule Issues tooltip'
+		}, 
+		{ 
+			name: 'Service Data Issues' 
+			,tooltip: 'Service Data Issues tooltip'
+		}
+	];
 
 	const tabChangeHandler = (selectedIdx, _data) => {
 		clickTab(selectedIdx, _data);

@@ -1,5 +1,5 @@
 import { CHART_COLORS } from '../components/charts/ChartConsts';
-import { ROWHEADER_TYPE } from '../consts/IssTableConsts';
+import { ROWHEADER_TYPE } from '../consts/IssConsts';
 
 export const dashboard_service_data = {
     data_aic_us : {

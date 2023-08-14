@@ -21,11 +21,12 @@ const IssTabs = (props) => {
                         <h2>{el.name}</h2>
                         <div className="ui-tooltip">
                             <i>툴팁</i>
-                            <div className="tooltip">Contents Issue Contents Issue Contents Issue texe text Contents Issue</div>
+                            <div className="tooltip">{el.tooltip}</div>
                         </div>
                     </div>
                 ))}
             </div>
+            {/* tab 영역 */}
             {children}
         </div>
         </>

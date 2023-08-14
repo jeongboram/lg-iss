@@ -7,6 +7,8 @@ import LineChart from '../components/charts/LineChart';
 import BarChart from '../components/charts/BarChart';
 import { CHART_COLORS, CHART_BAR_COLOR, CHART_BAR_GRID_COLOR } from '../components/charts/ChartConsts';
 import { Link } from 'react-router-dom';
+import IssTable from '../components/common/IssTable';
+import { dashboard_service_data, dashboard_service_tabledata } from '../consts/sampleData';
 
 const DashboardStatistics = () => {
 	const [region, setRegion] = useState([]);
@@ -25,6 +27,20 @@ const DashboardStatistics = () => {
 				setCountries(data);
 			});
 	}, []);
+
+	//------------------------------------
+	//tab 관련 
+	//------------------------------------
+	const tabMenus = [
+		{ 
+			name: 'Statistics Issues' 
+			,tooltip: 'Statistics Issues tooltip'
+		}, 
+		{ 
+			name: 'Beacon Data Issues' 
+			,tooltip: 'Beacon Data Issues tooltip'
+		}
+	];
 
 	const value_graph = {
 		data: {
@@ -113,22 +129,6 @@ const DashboardStatistics = () => {
 			legend: {
 				display: true,
 			},
-			/*
-			scales: {
-				y: {
-					min: 48,	//y축 min 값
-					max: 66,	//y축 max 값
-					beginAtZero: true,
-					ticks: {
-						stepSize: 2,	//해당 축 값 표기 기준
-					},
-					gridLines: {
-						color: CHART_BAR_GRID_COLOR.WHITE,
-						lineWidth: 3
-					}
-				}
-			},
-			*/
 			scales: {
 				y: {
 					min: 48, //y축 min 값
@@ -170,7 +170,7 @@ const DashboardStatistics = () => {
 					<div className="grid-row-2">
 						<div className="grid-single-row">
 							<div className="box-statisIssue">
-								<DefaultTable height={`calc(100% - 44px)`} pagination={true} />
+								<IssTable height={`calc(100% - 44px)`} pagination={true} data={dashboard_service_tabledata.sample_notitle_data} />
 							</div>
 						</div>
 						<div className="grid-column-3">

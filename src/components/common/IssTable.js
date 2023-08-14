@@ -7,7 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Pagination from '@material-ui/lab/Pagination';
-import { ROWHEADER_TYPE } from '../../consts/IssTableConsts'
+import { ROWHEADER_TYPE } from '../../consts/IssConsts'
 
 const IssTable = (props) => {
 	const { height, tableTitle, pagination, data } = props;

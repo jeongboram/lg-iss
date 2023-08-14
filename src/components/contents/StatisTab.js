@@ -11,6 +11,10 @@ function StatisTab() {
 				data: [-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 1, -0.5],
 				fill: false,
 				borderColor: '#9D8DF7',
+				//point style
+				pointBorderColor: '#9D8DF7',
+				pointBackgroundColor: '#9D8DF7',
+				pointBorderWidth: 2,
 			}
 		],
 	};
