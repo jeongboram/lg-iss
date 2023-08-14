@@ -7,11 +7,14 @@ import DropDown from '../components/common/DropDown';
 import DefaultTable from '../components/common/DefaultTable';
 import DoughnutLegend from '../components/charts/DoughnutLegend';
 import { dashboard_service_data, dashboard_service_tabledata } from '../consts/sampleData';
+import IssTabs from '../components/common/IssTabs';
+import IssTab from '../components/common/IssTab';
 
 const DashboardService = () => {
 	const [region, setRegion] = useState([]);
 	const [countries, setCountries] = useState([]);
-
+	const [currentTab, clickTab] = useState(0);
+	
 	useEffect(() => {
 		fetch('/region')
 			.then((response) => response.json())
@@ -26,12 +29,20 @@ const DashboardService = () => {
 			});
 	}, []);
 
-	
+
+	//------------------------------------
+	//tab 관련 
+	//------------------------------------
+	const tabMenus = [{ name: 'Schedule Issues' }, { name: 'Service Data Issues' }];
+
+	const tabChangeHandler = (selectedIdx, _data) => {
+		clickTab(selectedIdx, _data);
+	}
 
 	return (
 		<>
 			<div className="contents-section-container">
-				<SideBar currentTab={0}/>
+				<SideBar currentTab={0} />
 				<div className="contents-section">
 					<div className="grid-vertical-two">
 						<div className="grid-left">
@@ -77,7 +88,18 @@ const DashboardService = () => {
 								<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_service_tabledata.sample_data} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_service_tabledata.sample_data}/>
+								<IssTabs
+									tabMenus={tabMenus}
+									currentTab={currentTab}
+									onChange={tabChangeHandler}
+								>
+									<IssTab isActive={currentTab === 0}>
+										<IssTable height={`calc(100% - 40px`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+									</IssTab>    
+									<IssTab isActive={currentTab === 1}>
+										<IssTable height={`calc(100% - 40px`} pagination={false} data={dashboard_service_tabledata.sample_notitle_data} />
+									</IssTab>
+								</IssTabs>
 							</div>
 						</div>
 					</div>

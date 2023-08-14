@@ -147,5 +147,25 @@ export const dashboard_service_tabledata = {
 			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
 			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
 		],
+	},
+    sample_notitle_data : {
+        existTooltip : false,
+        tootle : {
+            title : 'Sample',
+            message : 'Sample tooltip message..!!'
+        },
+		header: ['head1', 'head2', 'head3', 'head4', 'head5', 'head6'],
+		rowdata: [
+			{ row: ['Frozen yoghurt', 159, 6.0, 24, 4.0, 1] },
+			{ row: ['Ice cream sandwich', 237, 9.0, 37, 4.3, 1] },
+			{ row: ['Eclair', 262, 16.0, 24, 6.0, 1] },
+			{ row: ['Cupcake', 305, 3.7, 67, 4.3, 1] },
+			{ row: ['Gingerbread', 356, 16.0, 49, 3.9, 1] },
+			{ row: ['Frozen yoghurt2', 159, 6.0, 24, 4.0, 1] },
+			{ row: ['Ice cream sandwich2', 237, 9.0, 37, 4.3, 1] },
+			{ row: ['Eclair2', 262, 16.0, 24, 6.0, 1] },
+			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
+			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
+		],
 	}
 };

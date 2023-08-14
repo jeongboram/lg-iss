@@ -38,14 +38,14 @@ const IssTable = (props) => {
 			padding: '8px 4px',
 		},
 		color: {
-			color: '#FFFFFF'
+			color: '#FFFFFF',
 		},
 		leftIconButton: {
-			color: '#B8B8B8'
+			color: '#B8B8B8',
 		},
 		rightIconButton: {
-			color: '#B8B8B8'
-		}
+			color: '#B8B8B8',
+		},
 	});
 
 	const classes = useStyles();
@@ -87,7 +87,9 @@ const IssTable = (props) => {
 										</>
 									) : (
 										<>
-											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>{colItem}</TableCell>
+											<TableCell key={`${_idxitem}_${_idx}_tablecell_${colItem}`} className={classes.tbody}>
+												{colItem}
+											</TableCell>
 										</>
 									),
 								)}

@@ -63,6 +63,65 @@
 	}
 }
 
+.ui-tab-type02 {
+	.ui-tab-menu,
+	.ui-tab-contents {
+		width: 100%;
+	}
+	.ui-tab-menu {
+		display: flex;
+		align-items: center;
+		> div {
+			margin-bottom: 16px;
+			display: flex;
+			align-items: center;
+			opacity: 0.6;
+			position: relative;
+			margin-left: 8px;
+			cursor: pointer;
+			@include transition(opacity, 0.15s);
+			&:before {
+				display: block;
+				content: '/';
+				font-size: 18px;
+				line-height: 24.3px;
+				color: #6d6d6d;
+				font-weight: 600;
+			}
+			&:first-child {
+				margin-left: 0;
+				&:before {
+					display: none;
+				}
+				h2 {
+					padding-left: 0;
+				}
+			}
+			h2 {
+				font-size: 18px;
+				color: #fff;
+				font-weight: 600;
+				padding-left: 9px;
+			}
+			&.on {
+				opacity: 1;
+			}
+		}
+	}
+	.ui-tab-contents {
+		height: calc(100% - 40px);
+		.tab-box {
+			display: none;
+			height: 100%;
+			overflow: hidden;
+			overflow-y: auto;
+			&:first-child {
+				display: block;
+			}
+		}
+	}
+}
+
 .ui-dropdown-type01 {
 	width: 124px;
 	height: 32px;
@@ -158,9 +217,43 @@
 }
 
 .ui-tooltip {
+	position: relative;
+	margin-left: 4px;
+	z-index: 55;
 	i {
 		@include btnTextHide(16px, 16px);
 		background-image: url('../../public/res/images/icons/icon-tooltip.png');
+	}
+	.tooltip {
+		position: absolute;
+		top: calc(100% + 14px);
+		left: -7px;
+		padding: 8px 12px;
+		opacity: 0;
+		background-color: #6d6d6d;
+		border-radius: 4px;
+		min-width: 170px;
+		max-width: 256px;
+		min-height: 20px;
+		font-size: 12px;
+		line-height: 17.4px;
+		color: #fff;
+		visibility: hidden;
+		@include transition(opacity, 0.2s);
+		&:before {
+			@include psuedoBg();
+			width: 24px;
+			height: 10px;
+			background-image: url('../../public/res/images/layout/tooltop-arrow.png');
+			position: absolute;
+			top: -10px;
+			left: 0;
+			z-index: 10;
+		}
+	}
+	i:hover + .tooltip {
+		visibility: visible;
+		opacity: 1;
 	}
 }
 
