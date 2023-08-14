@@ -70,15 +70,18 @@ const IssTable = (props) => {
 
 	return (
 		<>
-			<div className="head">
-				<div className="title">
-					<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
-					<div className="ui-tooltip">
-						<i>툴팁</i>
-						<div className="tooltip">tooltip</div>
+			{ 
+			tableTitle && 
+				<div className="head">
+					<div className="title">
+						<h2>{tableTitle || ISSTABLE_DEFAULT_TITLE}</h2>
+						<div className="ui-tooltip">
+							<i>툴팁</i>
+							<div className="tooltip">tooltip</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			}
 			<TableContainer component={Paper} className={classes.tableWrapper}>
 				<Table stickyHeader={true} className={classes.table} aria-label="simple table">
 					<TableHead>
