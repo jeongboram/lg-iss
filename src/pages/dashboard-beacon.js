@@ -14,33 +14,33 @@ const DashboardBeacon = () => {
 
 	useEffect(() => {
 		fetch('/region', {
-				headers: {
-					Accept: "application/json",
-				},
-			})
+			headers: {
+				Accept: 'application/json',
+			},
+		})
 			.then((response) => response.json())
 			.then((data) => {
 				setRegion(data);
 			});
 
 		fetch('/countries', {
-				headers: {
-					Accept: "application/json",
-				},
-			})
+			headers: {
+				Accept: 'application/json',
+			},
+		})
 			.then((response) => response.json())
 			.then((data) => {
 				setCountries(data);
 			});
 	}, []);
 
-	const OnRegionDropDownHandler = (data) =>{
-		console.log("####Dashboard Region Dropdown data=>", data);
-	}
+	const OnRegionDropDownHandler = (data) => {
+		console.log('####Dashboard Region Dropdown data=>', data);
+	};
 
-	const OnCountryDropDownHandler = (data) =>{
-		console.log("####Dashboard Country Dropdown data=>", data);
-	}
+	const OnCountryDropDownHandler = (data) => {
+		console.log('####Dashboard Country Dropdown data=>', data);
+	};
 
 	return (
 		<>
@@ -64,16 +64,16 @@ const DashboardBeacon = () => {
 								</div>
 							</div>
 						</div>
-						<div className="ui-components-box">
-							<DropDown item={region} title="Region" onChangeDropDown={OnRegionDropDownHandler}/>
-							<DropDown item={countries} title="Countries" onChangeDropDown={OnCountryDropDownHandler}/>
+						<div className="ui-dropdown-box">
+							<DropDown item={region} title="Region" onChangeDropDown={OnRegionDropDownHandler} />
+							<DropDown item={countries} title="Countries" onChangeDropDown={OnCountryDropDownHandler} />
 							<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 						</div>
 					</div>
 					<div className="grid-row-2">
 						<div className="grid-single-row">
 							<div className="box-statisIssue">
-								<IssTable pagination={true}  data={dashboard_statistics_beacon_tabledata.beacon_data_issue}/>
+								<IssTable pagination={true} data={dashboard_statistics_beacon_tabledata.beacon_data_issue} />
 							</div>
 						</div>
 						<div className="grid-column-2">
@@ -85,7 +85,13 @@ const DashboardBeacon = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'value_chart'} data={dashboard_statistics_beacon_chart.value_graph.data} options={dashboard_statistics_beacon_chart.value_graph.options} width={'100%'} height={'100%'} />
+										<LineChart
+											id={'value_chart'}
+											data={dashboard_statistics_beacon_chart.value_graph.data}
+											options={dashboard_statistics_beacon_chart.value_graph.options}
+											width={'100%'}
+											height={'100%'}
+										/>
 									</div>
 								</div>
 							</div>
@@ -97,7 +103,13 @@ const DashboardBeacon = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'changes_chart'} data={dashboard_statistics_beacon_chart.changes_graph.data} options={dashboard_statistics_beacon_chart.changes_graph.options} width={'100%'} height={'100%'} />
+										<LineChart
+											id={'changes_chart'}
+											data={dashboard_statistics_beacon_chart.changes_graph.data}
+											options={dashboard_statistics_beacon_chart.changes_graph.options}
+											width={'100%'}
+											height={'100%'}
+										/>
 									</div>
 								</div>
 							</div>

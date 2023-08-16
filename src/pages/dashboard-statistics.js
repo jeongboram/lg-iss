@@ -30,22 +30,22 @@ const DashboardStatistics = () => {
 	}, []);
 
 	//------------------------------------
-	//tab 관련 
+	//tab 관련
 	//------------------------------------
 	const pageTabMenus = [
-		{ 
-			title: 'Statistics Issues' 
-			,tooltip: 'Statistics Issues tooltip'
-		}, 
-		{ 
-			title: 'Beacon Data Issues' 
-			,tooltip: 'Beacon Data Issues tooltip'
-		}
+		{
+			title: 'Statistics Issues',
+			tooltip: 'Statistics Issues tooltip',
+		},
+		{
+			title: 'Beacon Data Issues',
+			tooltip: 'Beacon Data Issues tooltip',
+		},
 	];
 
-	const pageTabChangeHandler = (selectedIdx , data) => {
-		clickTab(selectedIdx)
-	}
+	const pageTabChangeHandler = (selectedIdx, data) => {
+		clickTab(selectedIdx);
+	};
 
 	const value_graph = {
 		data: {
@@ -151,13 +151,9 @@ const DashboardStatistics = () => {
 				<div className="contents-section">
 					<div className="head">
 						<div className="title tab-titles">
-							<IssPageTabs 
-								tabMenus={pageTabMenus}
-								currentTab={currentTab}
-								onChange={pageTabChangeHandler}
-							/>
+							<IssPageTabs tabMenus={pageTabMenus} currentTab={currentTab} onChange={pageTabChangeHandler} />
 						</div>
-						<div className="ui-components-box">
+						<div className="ui-dropdown-box">
 							<DropDown item={region} title="Region" />
 							<DropDown item={countries} title="Countries" />
 							<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
@@ -178,7 +174,7 @@ const DashboardStatistics = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'value_chart'} data={value_graph.data} options={value_graph.options}/>
+										<LineChart id={'value_chart'} data={value_graph.data} options={value_graph.options} />
 									</div>
 								</div>
 							</div>
@@ -190,7 +186,7 @@ const DashboardStatistics = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'changes_chart'} data={changes_graph.data} options={changes_graph.options}/>
+										<LineChart id={'changes_chart'} data={changes_graph.data} options={changes_graph.options} />
 									</div>
 								</div>
 							</div>
@@ -211,7 +207,7 @@ const DashboardStatistics = () => {
 					<IssPageTab isActive={currentTab === 1}>
 						<div className="grid-single-row">
 							<div className="box-statisIssue">
-								<IssTable pagination={true}  data={dashboard_statistics_beacon_tabledata.beacon_data_issue}/>
+								<IssTable pagination={true} data={dashboard_statistics_beacon_tabledata.beacon_data_issue} />
 							</div>
 						</div>
 						<div className="grid-column-2">
@@ -223,7 +219,13 @@ const DashboardStatistics = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'value_chart'} data={dashboard_statistics_beacon_chart.value_graph.data} options={dashboard_statistics_beacon_chart.value_graph.options} width={'100%'} height={'100%'} />
+										<LineChart
+											id={'value_chart'}
+											data={dashboard_statistics_beacon_chart.value_graph.data}
+											options={dashboard_statistics_beacon_chart.value_graph.options}
+											width={'100%'}
+											height={'100%'}
+										/>
 									</div>
 								</div>
 							</div>
@@ -235,7 +237,13 @@ const DashboardStatistics = () => {
 										</div>
 									</div>
 									<div className="ui-chart-container">
-										<LineChart id={'changes_chart'} data={dashboard_statistics_beacon_chart.changes_graph.data} options={dashboard_statistics_beacon_chart.changes_graph.options} width={'100%'} height={'100%'} />
+										<LineChart
+											id={'changes_chart'}
+											data={dashboard_statistics_beacon_chart.changes_graph.data}
+											options={dashboard_statistics_beacon_chart.changes_graph.options}
+											width={'100%'}
+											height={'100%'}
+										/>
 									</div>
 								</div>
 							</div>

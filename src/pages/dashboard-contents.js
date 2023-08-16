@@ -4,7 +4,7 @@ import DefaultButton from '../components/common/DefaultButton';
 import DropDown from '../components/common/DropDown';
 import DefaultTable from '../components/common/DefaultTable';
 import { CP_TYPE } from '../consts/IssConsts';
-import ChannelDataFlow from '../components/contents/ChannelDataFlow'
+import ChannelDataFlow from '../components/contents/ChannelDataFlow';
 import IssTable from '../components/common/IssTable';
 import { dashboard_contents_tabledata } from '../consts/sampleData';
 
@@ -38,7 +38,7 @@ const DashboardContents = () => {
 									<div className="title">
 										<h1>LG Channels Data Flow</h1>
 									</div>
-									<div className="ui-components-box">
+									<div className="ui-dropdown-box">
 										<DropDown item={region} title="Region" />
 										<DropDown item={countries} title="Countries" />
 										<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
@@ -53,38 +53,38 @@ const DashboardContents = () => {
 										</div>
 										<div className="cp-contents">
 											<ul>
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} isActive={true} data='02' />
-												<ChannelDataFlow imageUrl={CP_TYPE.FUSEMEDIA} isActive={true} data='99' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
-												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data='00' />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} isActive={true} data="02" />
+												<ChannelDataFlow imageUrl={CP_TYPE.FUSEMEDIA} isActive={true} data="99" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
+												<ChannelDataFlow imageUrl={CP_TYPE.Boomberg} data="00" />
 											</ul>
 										</div>
 									</div>
@@ -151,19 +151,19 @@ const DashboardContents = () => {
 							<div className="grid-column-2">
 								<div className="grid-left">
 									<div className="box-cmpIssues box-tbl">
-										<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.cmp_issues}/>
+										<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_contents_tabledata.cmp_issues} />
 									</div>
 								</div>
 								<div className="grid-right">
 									<div className="box-deviceIssues box-tbl">
-										<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.deivce_issues}/>
+										<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_contents_tabledata.deivce_issues} />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div className="grid-right">
 							<div className="box-cpIssues box-tbl">
-								<IssTable height={`calc(100% - 40px)`} pagination={false}  data={dashboard_contents_tabledata.cp_issues}/>
+								<IssTable height={`calc(100% - 40px)`} pagination={false} data={dashboard_contents_tabledata.cp_issues} />
 							</div>
 						</div>
 					</div>

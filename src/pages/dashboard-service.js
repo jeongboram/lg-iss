@@ -16,7 +16,7 @@ const DashboardService = () => {
 	const [cps, setCps] = useState([]);
 	const [platforms, setPlatforms] = useState([]);
 	const [currentTab, clickTab] = useState(0);
-	
+
 	useEffect(() => {
 		fetch('/region')
 			.then((response) => response.json())
@@ -36,32 +36,30 @@ const DashboardService = () => {
 				setPlatforms(data);
 			});
 
-			fetch('/cps')
+		fetch('/cps')
 			.then((response) => response.json())
 			.then((data) => {
 				setCps(data);
 			});
-
 	}, []);
 
-
 	//------------------------------------
-	//tab 관련 
+	//tab 관련
 	//------------------------------------
 	const tabMenus = [
-		{ 
-			name: dashboard_service_tabledata.schedule_issues.title 
-			,tooltip: dashboard_service_tabledata.schedule_issues.tooltip 
-		}, 
-		{ 
-			name: 'Service Data Issues' 
-			,tooltip: 'Service Data Issues tooltip'
-		}
+		{
+			name: dashboard_service_tabledata.schedule_issues.title,
+			tooltip: dashboard_service_tabledata.schedule_issues.tooltip,
+		},
+		{
+			name: 'Service Data Issues',
+			tooltip: 'Service Data Issues tooltip',
+		},
 	];
 
 	const tabChangeHandler = (selectedIdx, _data) => {
 		clickTab(selectedIdx);
-	}
+	};
 
 	return (
 		<>
@@ -75,7 +73,7 @@ const DashboardService = () => {
 									<div className="title">
 										<h1>Monitoring World Map</h1>
 									</div>
-									<div className="ui-components-box">
+									<div className="ui-dropdown-box">
 										<DropDown item={region} title="Region" />
 										<DropDown item={countries} title="Countries" />
 										<DropDown item={platforms} title="Platforms" />
@@ -111,16 +109,12 @@ const DashboardService = () => {
 								<IssTable pagination={false} data={dashboard_service_tabledata.image_issue} />
 							</div>
 							<div className="box-secheduleIssues box-tbl">
-								<IssTabs
-									tabMenus={tabMenus}
-									currentTab={currentTab}
-									onChange={tabChangeHandler}
-								>
+								<IssTabs tabMenus={tabMenus} currentTab={currentTab} onChange={tabChangeHandler} className="ui-tab-type02">
 									<IssTab isActive={currentTab === 0}>
-										<IssTable height={"100%"} pagination={false} data={dashboard_service_tabledata.schedule_issues} />
-									</IssTab>    
+										<IssTable height={'100%'} pagination={false} data={dashboard_service_tabledata.schedule_issues} />
+									</IssTab>
 									<IssTab isActive={currentTab === 1}>
-										<IssTable height={"100%"} pagination={false} data={dashboard_service_tabledata.service_data_issues} />
+										<IssTable height={'100%'} pagination={false} data={dashboard_service_tabledata.service_data_issues} />
 									</IssTab>
 								</IssTabs>
 							</div>
