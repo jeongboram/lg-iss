@@ -21,7 +21,6 @@ export const sampledata = {
 			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
 			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
 		],
-		
 	},
 	sample_notitle_data: {
 		existTooltip: false,
@@ -41,9 +40,8 @@ export const sampledata = {
 			{ row: ['Cupcake2', 305, 3.7, 67, 4.3, 1] },
 			{ row: ['Gingerbread2', 356, 16.0, 49, 3.9, 1] },
 		],
-		
 	},
-}
+};
 
 export const dashboard_service_data = {
 	data_aic_us: {
@@ -135,6 +133,7 @@ export const dashboard_service_data = {
 export const dashboard_service_tabledata = {
 	lg_channels_app_issues: {
 		title: 'LG Channles App Issues',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'LG Channles App Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'Isssule Contents'],
@@ -153,6 +152,7 @@ export const dashboard_service_tabledata = {
 
 	palyback_issue: {
 		title: 'Playback Issuess',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'Playback Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'Isssule Contents'],
@@ -171,6 +171,7 @@ export const dashboard_service_tabledata = {
 
 	image_issue: {
 		title: 'Image Issuess',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'Image Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'CP', 'Ch No. / VOD', 'Issue Contents'],
@@ -202,6 +203,7 @@ export const dashboard_service_tabledata = {
 
 	schedule_issues: {
 		title: 'Schedule Issues Issuess',
+		visibleTitle: false,
 		existTooltip: false,
 		tooltip: 'Schedule Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Ch No. / Name', 'CP', 'Issue Contents'],
@@ -223,6 +225,7 @@ export const dashboard_service_tabledata = {
 
 	service_data_issues: {
 		title: 'Service Data Issuess',
+		visibleTitle: false,
 		existTooltip: false,
 		tooltip: 'Service Data Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Platform', 'Ch No. / VOD', 'CP', 'Issue Contents'],
@@ -256,6 +259,7 @@ export const dashboard_service_tabledata = {
 export const dashboard_contents_tabledata = {
 	cmp_issues: {
 		title: 'CMP Issues',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'CMP Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Issue classification', 'Issue Contents'],
@@ -281,6 +285,7 @@ export const dashboard_contents_tabledata = {
 	},
 	deivce_issues: {
 		title: 'CMP Issues',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'CMP Issues tooltip message..!!',
 		header: ['Date', 'Country', 'Issue classification', 'Issue Contents'],
@@ -306,6 +311,7 @@ export const dashboard_contents_tabledata = {
 	},
 	cp_issues: {
 		title: 'CP Issuess',
+		visibleTitle: true,
 		existTooltip: true,
 		tooltip: 'CP Issues tooltip message..!!',
 		header: ['Date', 'Country', 'CP', 'Ch / VOD', 'Issue Contents'],
@@ -357,6 +363,7 @@ export const dashboard_contents_tabledata = {
 export const dashboard_statistics_tabledata = {
 	cp_issues: {
 		title: 'Statistics Issuess',
+		visibleTitle: false,
 		existTooltip: false,
 		tooltip: 'Statistics Issues tooltip message..!!',
 		header: ['Date', 'Region', 'Country', 'Platform', 'Channel / VOD', 'CP', 'Indicator', 'value', 'Rete of increase and decrease'],
@@ -400,6 +407,7 @@ export const dashboard_statistics_tabledata = {
 export const dashboard_statistics_beacon_tabledata = {
 	beacon_data_issue: {
 		title: 'Beacon Issuess',
+		visibleTitle: false,
 		existTooltip: false,
 		tooltip: 'Beacon Issues tooltip message..!!',
 		header: ['Issue Code', 'Period', 'Beacon Type', 'Indicator', 'Detecting Type', 'Value', 'Jira', 'Column', 'RIC Column'],
@@ -508,8 +516,9 @@ export const dashboard_statistics_beacon_chart = {
 };
 
 export const sub_service_tabledata = {
-	lg_channels_app_issues: {
-		title: 'lg_channels_app_issues',
+	issues_status: {
+		title: 'Issue Status',
+		visibleTitle: true,
 		existTooltip: false,
 		tooltip: 'Statistics Issues tooltip message..!!',
 		header: ['Date', 'Region', 'Country', 'Platform', 'Channel / VOD', 'CP', 'Indicator', 'value', 'Rete of increase and decrease'],

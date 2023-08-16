@@ -469,9 +469,24 @@ body,
 		.grid-row-wide {
 			display: flex;
 			flex-direction: column;
+			gap: 24px;
 			> div {
 				width: 100%;
 				@extend .box-container-style;
+				padding: 20px 20px 0 20px;
+				background-color: $card_bg_type01_color;
+				.head {
+					margin-bottom: 16px;
+					.title {
+						display: flex;
+						align-items: center;
+						h2 {
+							font-size: 18px;
+							color: #fff;
+							font-weight: 600;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1127,7 +1142,11 @@ body,
 			top: 0;
 			right: 0;
 		}
-		.row-box {
+		.box-lgchannels {
+			height: 484px;
+		}
+		.box-actionPoints {
+			height: 655px;
 		}
 	}
 }

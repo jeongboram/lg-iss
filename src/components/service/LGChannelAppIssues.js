@@ -46,10 +46,10 @@ function LGChannelAppIssues() {
 				<DefaultButton type={'button'} text={'Search'} btnClass={'btn-search'} />
 			</div>
 			<div className="grid-row-wide">
-				<div className="row-box">
-					<IssTable height={'calc(100% - 40px)'} pagination={false} data={sub_service_tabledata.lg_channels_app_issues} />
+				<div className="row-box box-tbl box-lgchannels">
+					<IssTable height={'calc(100% - 137px)'} pagination={true} data={sub_service_tabledata.issues_status} />
 				</div>
-				<div className="row-box">12</div>
+				<div className="row-box box-actionPoints">12</div>
 			</div>
 		</div>
 	);

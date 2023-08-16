@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef }  from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -19,24 +19,24 @@ const IssTable = (props) => {
 
 	var customHeight = height;
 
-	if ( !height ) {
+	if (!height) {
 		customHeight = DEFAULT_HEIGHT;
 	}
 
-	if ( !height && pagination ) {
+	if (!height && pagination) {
 		customHeight = DEFAULT_PAGE_HEIGHT;
 	}
 
 	/**
 	 * page click event
-	 * 
-	 * @param {*} event 
+	 *
+	 * @param {*} event
 	 * @param {*} value page no
 	 */
 	const onChangePageHalder = (event, value) => {
-		console.log("#Page Change Event=>" , value);
+		console.log('#Page Change Event=>', value);
 		setPage(value);
-	}
+	};
 
 	useEffect(() => {
 		const ptableref = tableRef.current;
@@ -46,32 +46,35 @@ const IssTable = (props) => {
 			// console.log('HTMLCanvasElement', chart.canvas);
 		}
 
-		return (() => {
+		return () => {
 			const ptableref = tableRef.current;
 			if (ptableref) {
 				console.log('####IssTable destroy=>', data.title);
 				ptableref.remove();
 			}
-		})
+		};
 	}, []);
 
 	return (
 		<>
-			{data.existTooltip && (
+			{data.visibleTitle && (
 				<div className="head">
 					<div className="title">
 						<h2>{data.title}</h2>
-						<div className="ui-tooltip">
-							<i>툴팁</i>
-							<div className="tooltip">{data.tooltip}</div>
-						</div>
+						{data.existTooltip && (
+							<div className="ui-tooltip">
+								<i>툴팁</i>
+								<div className="tooltip">{data.tooltip}</div>
+							</div>
+						)}
 					</div>
 				</div>
 			)}
 			<TableContainer ref={tableRef} component={Paper} className="tableWrapper" style={{ height: `${customHeight}` }}>
 				<Table stickyHeader={true} aria-label="simple table">
 					<colgroup>
-						{	/* column width */
+						{
+							/* column width */
 							data.cellWidth?.map((width, index) => (
 								<col width={width} key={index}></col>
 							))
@@ -113,9 +116,7 @@ const IssTable = (props) => {
 					</TableBody>
 				</Table>
 			</TableContainer>
-			{ pagination && 
-				<Pagination count={20} page={page} showFirstButton showLastButton onChange={onChangePageHalder} className="ui-pagination"/>
-			}
+			{pagination && <Pagination count={20} page={page} showFirstButton showLastButton onChange={onChangePageHalder} className="ui-pagination" />}
 		</>
 	);
 };
