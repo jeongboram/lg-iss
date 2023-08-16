@@ -527,3 +527,23 @@
 		@include lineClamp(1);
 	}
 }
+
+button {
+	&[class*=btn-primary-]  {
+		min-width: 160px;
+		height: 44px;
+		border-radius: 99px;
+		line-height: 20.3px;
+		font-size: 14px;
+		font-weight: 600;
+		&.btn-primary-gray {
+			background-color: #6d6d6d;
+			color: #fff;
+		}
+		&.btn-primary-accent {
+			background-color: $primary_accent_color;
+			color: #010101;
+		}
+	}
+
+}

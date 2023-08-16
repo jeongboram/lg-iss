@@ -47,9 +47,40 @@ function LGChannelAppIssues() {
 			</div>
 			<div className="grid-row-wide">
 				<div className="row-box box-tbl box-lgchannels">
-					<IssTable height={'calc(100% - 137px)'} pagination={true} data={sub_service_tabledata.issues_status} />
+					<IssTable height={'calc(100% - 101px)'} pagination={true} data={sub_service_tabledata.issues_status} />
 				</div>
-				<div className="row-box box-actionPoints">12</div>
+				<div className="row-box box-actionPoints">
+					<div className="row">
+						<div className="head">
+							<div className="title">
+								<h2>Action Points</h2>
+							</div>
+						</div>
+						<div className="grid-column-3">
+							<div className="box-evidence">
+								<h3>Evidence</h3>
+								<div>chart</div>
+							</div>
+							<div className="box-des">
+								<h3>Description</h3>
+								<IssTable height={'calc(100% - 40px)'} pagination={false} data={sub_service_tabledata.description} />
+							</div>
+							<div className="box-actionDetail">
+								<h3>Action Details</h3>
+								<textarea placeholder="Enter action details"></textarea>
+							</div>
+						</div>
+						<div className="button-container align-right">
+							<button className="btn-primary-gray">Save</button>
+							<button className="btn-primary-accent">Create Jira</button>
+						</div>
+					</div>
+					<div className="row">
+						<div className="box-issueHistory">
+							<IssTable height={'calc(100% - 30px)'} pagination={false} data={sub_service_tabledata.issue_history} />
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

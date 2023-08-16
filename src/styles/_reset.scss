@@ -97,6 +97,13 @@ button {
 	margin: 0 auto;
 }
 
+.row {
+	width: 100%;
+	clear: both;
+}
+.align-right {
+	justify-content: flex-end;
+}
 *::-webkit-scrollbar {
 	width: 4px;
 }
